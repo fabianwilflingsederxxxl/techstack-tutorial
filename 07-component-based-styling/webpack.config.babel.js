@@ -15,6 +15,10 @@ const commonConfig = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    modules: [
+      path.join(__dirname, 'src'),
+      'node_modules',
+    ],
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -42,7 +46,7 @@ const developmentConfig = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
         use: [
           'style-loader',
           {
@@ -53,6 +57,7 @@ const developmentConfig = {
               localIdentName: '[name]__[local]___[hash:base64:5]',
             },
           },
+          'sass-loader',
         ],
       },
     ],

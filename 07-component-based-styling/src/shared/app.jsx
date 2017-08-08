@@ -15,7 +15,7 @@ import NotFoundPage from './pages/error/NotFound';
 import { HOME_PAGE_ROUTE, TUTORIALS_PAGE_ROUTE } from './routes';
 
 // global styles
-import './styles/main.css';
+import './styles/main.scss';
 
 class App extends Component {
   render() {

@@ -5,7 +5,8 @@
       "css-modules-transform",
       {
         "generateScopedName": "[name]__[local]___[hash:base64:5]",
-        "extensions": [".css"],
+        "preprocessCss": "./babelrc.js",
+        "extensions": [".css", ".scss"],
         "extractCss": "./dist/css/styles.css"
       }
     ]
