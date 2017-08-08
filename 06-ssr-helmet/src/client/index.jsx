@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
 
-import App from './app';
+import App from '../shared/app';
 import { APP_CONTAINER_SELECTOR } from '../shared/config';
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR);
@@ -20,9 +20,9 @@ const wrapApp = AppComponent =>
 ReactDOM.render(wrapApp(App), rootEl);
 
 if (module.hot) {
-  module.hot.accept('./app', () => {
+  module.hot.accept('../shared/app', () => {
     // eslint-disable-next-line global-require
-    const NextApp = require('./app').default;
+    const NextApp = require('../shared/app').default;
     ReactDOM.render(wrapApp(NextApp), rootEl);
   });
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch } from 'react-router';
 import { Route } from 'react-router-dom';
 
-import { APP_NAME } from '../shared/config';
+import { APP_NAME } from './config';
 import Nav from './components/Navigation';
 
 // Pages
@@ -11,7 +11,7 @@ import Tutorials from './pages/Tutorials';
 import NotFoundPage from './pages/error/NotFound';
 
 // Routes
-import { HOME_PAGE_ROUTE, TUTORIALS_PAGE_ROUTE } from '../shared/routes';
+import { HOME_PAGE_ROUTE, TUTORIALS_PAGE_ROUTE } from './routes';
 
 class App extends Component {
   render() {
