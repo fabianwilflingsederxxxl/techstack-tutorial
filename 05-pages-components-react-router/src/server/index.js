@@ -3,7 +3,7 @@ import express from 'express';
 
 import { APP_NAME, STATIC_PATH, WEB_PORT } from '../shared/config';
 import { isProd } from '../shared/util';
-import { firstEndpointRoute } from '../shared/routes'
+import { firstEndpointRoute } from '../shared/routes';
 
 import renderApp from './render-app';
 
@@ -18,8 +18,8 @@ app.get('/', (req, res) => {
 });
 
 app.get(firstEndpointRoute(), (req, res) => {
-  res.json({ serverMessage: `Hello from the server! (received ${req.params.num})` })
-})
+  res.json({ serverMessage: `Hello from the server! (received ${req.params.num})` });
+});
 
 app.listen(WEB_PORT, () => {
   // eslint-disable-next-line no-console
