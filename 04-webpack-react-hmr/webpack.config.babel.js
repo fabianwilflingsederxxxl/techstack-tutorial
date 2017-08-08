@@ -1,3 +1,4 @@
+import webpack from 'webpack';
 import path from 'path';
 
 import { WDS_PORT } from './src/shared/config';
@@ -5,6 +6,7 @@ import { isProd } from './src/shared/util';
 
 export default {
   entry: [
+    'react-hot-loader/patch',
     './src/client',
   ],
   output: {
@@ -23,5 +25,15 @@ export default {
   },
   devServer: {
     port: WDS_PORT,
+    hot: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+  ],
 };
