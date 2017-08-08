@@ -1,6 +1,13 @@
 {
-  "presets": [
-    "env",
-    "react"
+  "presets": ["env", "react"],
+  "plugins": [
+    [
+      "css-modules-transform",
+      {
+        "generateScopedName": "[name]__[local]___[hash:base64:5]",
+        "extensions": [".css"],
+        "extractCss": "./dist/css/styles.css"
+      }
+    ]
   ]
 }
