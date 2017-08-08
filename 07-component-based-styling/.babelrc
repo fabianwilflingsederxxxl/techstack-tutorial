@@ -9,6 +9,12 @@
         "extensions": [".css", ".scss"],
         "extractCss": "./dist/css/styles.css"
       }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": ["./src"]
+      }
     ]
   ]
 }

@@ -5,8 +5,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
 
-import App from '../shared/app';
-import { APP_CONTAINER_SELECTOR } from '../shared/config';
+import App from 'shared/app';
+import { APP_CONTAINER_SELECTOR } from 'shared/config';
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR);
 

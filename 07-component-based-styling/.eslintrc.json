@@ -1,8 +1,6 @@
 {
   "extends": "airbnb",
-  "plugins": [
-    "compat"
-  ],
+  "plugins": ["compat"],
   "rules": {
     "compat/compat": 2,
     "react/prefer-stateless-function": 0
@@ -11,6 +9,9 @@
     "browser": true
   },
   "settings": {
-    "polyfills": ["fetch"]
+    "polyfills": ["fetch"],
+    "import/resolver": {
+      "babel-module": {}
+    }
   }
 }
