@@ -1,4 +1,5 @@
 import 'isomorphic-fetch';
+import Helmet from 'react-helmet';
 import React, { Component } from 'react';
 
 import { firstEndpointRoute } from '../../../shared/routes';
@@ -59,7 +60,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Home</h1>
+        <Helmet title={'Home'} meta={[{ name: 'description', content: 'Home Page description' }]} />
         <Button text={this.state.buttonText} onButtonClick={this.clickHandler} />
         <Button text={this.state.buttonTextAsync} onButtonClick={this.clickHandlerAsync} />
       </div>
