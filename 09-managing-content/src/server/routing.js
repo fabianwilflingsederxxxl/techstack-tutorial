@@ -2,9 +2,10 @@ import {
   HOME_PAGE_ROUTE,
   TUTORIALS_PAGE_ROUTE,
   firstEndpointRoute,
+  articleRoute,
 } from 'shared/routes';
 
-import { homePage, tutorialsPage } from './controller';
+import { homePage, tutorialsPage, articlePage } from './controller';
 import renderApp from './render-app';
 
 export default (app) => {
@@ -14,6 +15,10 @@ export default (app) => {
 
   app.get(TUTORIALS_PAGE_ROUTE, (req, res) => {
     res.send(renderApp(req.url, tutorialsPage()));
+  });
+
+  app.get(articleRoute(), (req, res) => {
+    res.send(renderApp(req.url, articlePage()));
   });
 
   app.get(firstEndpointRoute(), (req, res) => {
