@@ -8,9 +8,7 @@ The public folder is defined in the `src/shared/server/index.js` as a public pat
 
 We use the package marked for Mark Down Rendering:
 
-:::info
-**Run:** `yarn add marked`
-:::
+* **Run:** `yarn add marked`
 
 **Create** a file `src/shared/pages/Article/index.jsx` containing:
 
@@ -282,15 +280,14 @@ class Tutorials extends Component {
 export default Tutorials;
 ```
 
-:::success
 Congratulations, you completed Page 9!
 
 Dont forget to:
 
-**run** `git add .`
+**Run:** `git add .`
 and then
 `git commit -m="Page 9"`
-:::
+
 ---
 
 Back to the [previous section](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/08-better-styles/Readme.md) or the [table of contents](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/Readme.md).

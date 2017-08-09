@@ -122,11 +122,10 @@ You know how you typically have *templating engines* on the back-end? Well these
 In `package.json` **change** your `start` script to: `"start": "babel-node src/server",
 `
 
-:::info
-**Run:** `yarn start`, and hit `localhost:8000` in your browser.
+* **Run:** `yarn start`, and hit `localhost:8000` in your browser.
 
 If everything works as expected you should see a blank page with "Hello App" written both on the tab title and as a green heading on the page.
-:::
+
 **Note**: Some processes – typically processes that wait for things to happen, like a server for instance – will prevent you from entering commands in your terminal until they're done. To interrupt such processes and get your prompt back, press **Ctrl+C**. You can alternatively open a new terminal tab if you want to keep them running while being able to enter commands. You can also make these processes run in the background but that's out of the scope of this tutorial.
 
 ## Nodemon
@@ -135,10 +134,7 @@ If everything works as expected you should see a blank page with "Hello App" wri
 
 We are going to use Nodemon whenever we are in **development** mode.
 
-:::info
-**Run:** `yarn add --dev nodemon`
-:::
-
+* **Run:** `yarn add --dev nodemon`
 
 **Change** `scripts` in `package.json`
 
@@ -151,10 +147,7 @@ We are going to use Nodemon whenever we are in **development** mode.
 
 In `dev:start`, the `--ignore lib` indicates to *not* restart the server when changes happen in the `lib` directory. Nodemon typically runs the `node` binary. We tell Nodemon to use the `babel-node` binary instead. This way it will understand all the ES6/Flow code.
 
-:::info
-**Run:** `yarn start` and open `localhost:8000`.
-:::
-
+* **Run:** `yarn start` and open `localhost:8000`.
 
 Go ahead and **change** the `APP_NAME` constant in `src/shared/config.js`, which triggers a restart of your server in the terminal. Refresh the page to see the updated title.
 
@@ -165,9 +158,7 @@ Go ahead and **change** the `APP_NAME` constant in `src/shared/config.js`, which
 
 We are going to use PM2 whenever we are in **production** mode.
 
-:::info
-**Run:** `yarn add --dev pm2`
-:::
+* **Run:** `yarn add --dev pm2`
 
 In production, you want your server to be as performant as possible. `babel-node` triggers the entire Babel transpilation process for your files at each execution, which is not something you want in production. We need Babel to do all this work beforehand, and have our server serve plain old pre-compiled ES5 files.
 
@@ -175,10 +166,7 @@ One of the main features of Babel is to take a folder of ES6 code (usually named
 
 This `lib` folder being auto-generated. Before a new build we clean up this directory. A simple cross platform package to delete files is `rimraf`.
 
-:::info
-**Run:** `yarn add --dev rimraf`
-:::
-
+* **Run:** `yarn add --dev rimraf`
 
 **Add** `prod:build` to our `scripts` in `package.json`:
 
@@ -186,25 +174,17 @@ This `lib` folder being auto-generated. Before a new build we clean up this dire
 "prod:build": "rimraf lib && babel src -d lib --ignore .test.js",
 ```
 
-:::info
-**Run:** `yarn prod:build`
-:::
+* **Run:** `yarn prod:build`
 
 This generates a `lib` folder with the transpiled code, except for files ending in `.test.js` (note that `.test.jsx` files are also ignored by this parameter).
 
+**Add** `/lib/` to your `.gitignore`
 
-:::warning
-Add `/lib/` to your `.gitignore`
-:::
 One last thing: We are going to pass a `NODE_ENV` environment variable to our PM2 binary. With Unix, you would do this by running `NODE_ENV=production pm2`, but Windows uses a different syntax. We're going to use a small package called `cross-env` to make this syntax work on Windows as well.
 
-:::info
 **Run:** `yarn add --dev cross-env`
-:::
 
-:::warning
-Change the `scripts` section of your `package.json`
-:::
+**Change** the `scripts` section of your `package.json`
 
 ```json
 "scripts": {
@@ -218,28 +198,23 @@ Change the `scripts` section of your `package.json`
 },
 ```
 
-:::info
-**Run:** `yarn prod:build`, then run `yarn prod:start`.
-:::
+* **Run:** `yarn prod:build`, then run `yarn prod:start`.
 
 PM2 shows an active process. Go to `http://localhost:8000/` in your browser to see your app. Your terminal should show the logs, which should be "Server running on port 8000 (production).". Note that with PM2, your processes are run in the background. If you press Ctrl+C, it will kill the `pm2 logs` command, which was the last command of our `prod:start` chain. If you want to stop the server, run `yarn prod:stop`
 
-:::warning
 To ensure that`prod:build` works fine before commiting code to the repository, add it to the `precommit` task in your `package.json`.
-:::
+
 ```json
 "precommit": "yarn test && yarn prod:build"
 ```
 
-:::success
 Congratulations, you completed Page 3!
 
 Dont forget to:
 
-**run** `git add .`
+* **Run:** `git add .`
 and then
 `git commit -m="Page 3"`
-:::
 
 ---
 

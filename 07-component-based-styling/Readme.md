@@ -61,9 +61,7 @@ Now is a good time to differenciate between production config and development co
 
 To combine the configurations we will use the library webpack-merge, so install that first:
 
-:::info
-**Run:** `yarn add --dev webpack-merge`
-:::
+* **Run:** `yarn add --dev webpack-merge`
 
 Now put the content of the default export to an constant `commonConfig` and remove all conditions, where we were checking if isProd is true or other dev settings where made. On Bottom we now define an variable that contains the setup specific config:
 
@@ -124,9 +122,7 @@ In production the Server initiates the Server Side Rendering in lib/server, that
 
 For this we use the Babel plugin `babel-plugin-css-modules-transform`.
 
-:::info
-**Run:** `yarn add --dev babel-plugin-css-modules-transform`
-:::
+* **Run:** `yarn add --dev babel-plugin-css-modules-transform`
 
 **Update** the babel config `.babelrc`:
 
@@ -227,9 +223,7 @@ class Button extends Component {
 //[...]
 ```
 
-:::info
-**Run:** `yarn prod:build` and take a look into the dist folder.
-:::
+* **Run:** `yarn prod:build` and take a look into the dist folder.
 
 You will find a css/styles.css file with following content:
 
@@ -243,9 +237,7 @@ You will find a css/styles.css file with following content:
 }
 ```
 
-:::info
-**Run:** the application with `yarn prod:start`and reload `http://localhost:8000`;
-:::
+* **Run:** the application with `yarn prod:start`and reload `http://localhost:8000`;
 
 ### Development Settings
 
@@ -311,15 +303,11 @@ const developmentConfig = {
 
 The interesting part is the `query` parameter for the `babel-loader`. It tells the loader to ignore the `.babelrc` settings.
 
-:::info
-**Run:** `yarn add --dev style-loader css-loader`
-:::
+* **Run:** `yarn add --dev style-loader css-loader`
 
 The next rule uses css-loader with modules true to put the css imports into your javascript modules and therefor enables Hot Module Reload in Development.
 
-:::info
-**Run:** the application with `yarn start` and in another window `yarn dev:wds` and reload `http://localhost:8000`.
-:::
+* **Run:** the application with `yarn start` and in another window `yarn dev:wds` and reload `http://localhost:8000`.
 
 *Don't forget to close the production server with `yarn prod:stop` if it is still running.*
 
@@ -378,9 +366,7 @@ This is the step before we give our App a facelift, so stay with me!
 
 To use Sass files, we have to change the css loader in our webpack config and adapt the plugin in our `.babelrc` config. But first lets install some dependencies:
 
-:::info
-**Run:** `yarn add --dev node-sass sass-loader`
-:::
+* **Run:** `yarn add --dev node-sass sass-loader`
 
 **Modify** `webpack.config.babel.js` to add the sass loader to the webpack config:
 
@@ -552,9 +538,7 @@ import { firstEndpointRoute } from '../../../shared/routes';
 
 To handle the server side once again we have to align webpack again with babel loader. So we add another plugin to our babel configuration:
 
-:::info
-**Run:** `yarn add --dev babel-plugin-module-resolver`
-:::
+* **Run:** `yarn add --dev babel-plugin-module-resolver`
 
 And modify the `.babelrc` Config:
 ```json
@@ -584,9 +568,7 @@ Now everytime babel is resolving a path it will look in `src/` before `node_modu
 
 To avoid ES Linting errors add another plugin:
 
-:::info
-**Run:** `yarn add --dev eslint-plugin-import eslint-import-resolver-babel-module`
-:::
+* **Run:** `yarn add --dev eslint-plugin-import eslint-import-resolver-babel-module`
 
 And modify your `.eslintrc.json` file to:
 
@@ -624,15 +606,13 @@ Keep HMR active, to see if it works correctly.
 
 That was a tough one, not just for you but for us as well. When you came that far visit us and lets talk about the stuff that just happened. (florian)
 
-:::success
 Congratulations, you completed Page 7!
 
 Dont forget to:
 
-**run** `git add .`
+**Run:** `git add .`
 and then
 `git commit -m="Page 7"`
-:::
 
 ---
 

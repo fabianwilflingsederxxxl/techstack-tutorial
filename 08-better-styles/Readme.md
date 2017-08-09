@@ -475,21 +475,15 @@ class Button extends Component {
 
 Now the site is ready for action.
 
+* **Visit** localhost:8000
 
-
-:::info
-**Visit** localhost:8000
-:::
-
-:::success
 Congratulations, you completed Page 8!
 
 Dont forget to:
 
-**run** `git add .`
+**Run:** `git add .`
 and then
 `git commit -m="Page 8"`
-:::
 
 ---
 

@@ -42,9 +42,7 @@ const App = () => <Home />;
 export default App;
 ```
 
-:::info
-**Run:** Open 'localhost:8000' and check out the new Page.
-:::
+* **Run:** Open 'localhost:8000' and check out the new Page.
 
 In the next section we are going to add a component to our page. But first some general information:
 
@@ -77,7 +75,7 @@ With that in mind we can build a custom button with  handling via properties. Th
 
 For type checking the props of the buttons properties we will use [PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html).
 
-**Run** `yarn add prop-types`
+* **Run** `yarn add prop-types`
 
 
 **Create** a `src/client/components/Button/index.jsx` file containing:
@@ -139,7 +137,9 @@ This button is placed in components, meaning it will be a component that we use 
 Right now the parent component (Home) only gives the props text to the child (Button). The function, that gets triggered onclick is the default function defined in the Button Component. (Empty function)
 
 Let's define a function in the parent component and start with some basic state handling in the Page component:
+
 **Edit** ``src/client/pages/Home/index.jsx``
+
 ```jsx
 import React, { Component } from 'react';
 
@@ -228,7 +228,7 @@ Open the url `http://localhost:8000/ajax/first/123` and you will see the json re
 
 We are going to use `fetch` to make calls to the server from the client. `fetch` is not supported by all browsers yet, so we are going to need a polyfill. `isomorphic-fetch` is a polyfill that makes it work cross-browsers and in Node too!
 
-**Run** `yarn add isomorphic-fetch`
+* **Run** `yarn add isomorphic-fetch`
 
 Since we're using `eslint-plugin-compat`, we need to indicate that we are using a polyfill for `fetch` to not get warnings from using it.
 
@@ -326,9 +326,7 @@ There are two buttons rendered on the Home Page, the first one behaves as define
 
 > **[React Router](https://reacttraining.com/react-router/)** is a library to navigate between pages in your React app. It can be used on both the client and the server.
 
-:::info
-**Run:** `yarn add react-router react-router-dom`
-:::
+* **Run:** `yarn add react-router react-router-dom`
 
 On the client side, we first need to wrap our app inside a `BrowserRouter` component.
 
@@ -477,26 +475,19 @@ class App extends Component {
 export default App;
 ```
 
-:::info
-**Run:** `yarn start` and `yarn dev:wds`. Open `http://localhost:8000`, and click on the links to navigate between our different pages.
-:::
-
+* **Run:** `yarn start` and `yarn dev:wds`. Open `http://localhost:8000`, and click on the links to navigate between our different pages.
 
 You'll see the URL changing dynamically. Switch between different pages and use the back button of your browser to see that the browsing history is working as expected.
 
 Now, let's say you navigated to `http://localhost:8000/tutorials` this way. Hit the refresh button. You now get a 404, because our Express server only responds to `/`. As you navigated between pages, you were actually only doing it on the client-side. Let's add server-side rendering to the mix to get the expected behavior.
 
-
-
-:::success
 Congratulations, you completed Page 5!
 
 Dont forget to:
 
-**run** `git add .`
+**Run:** `git add .`
 and then
 `git commit -m="Page 5"`
-:::
 
 ---
 
