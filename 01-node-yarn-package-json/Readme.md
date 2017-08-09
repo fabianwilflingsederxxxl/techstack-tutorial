@@ -98,7 +98,7 @@ In `package.json`, **add** a `scripts` section:
 
 `package.json` must be a valid JSON file, which means that you cannot have trailing commas. So be careful when editing manually your `package.json` file.
 
-* **Run:** `yarn
+* **Run:** `yarn start`
 
     Hello world
 
