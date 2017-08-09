@@ -29,11 +29,11 @@ class App extends Component {
       <div>
         <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
         <Nav />
-         <Switch>
-            <Route exact path={HOME_PAGE_ROUTE} render={() => <Home />} />
-            <Route path={TUTORIALS_PAGE_ROUTE} render={() => <Tutorials />} />
-            <Route path={articleRoute()} component={Article} />
-            <Route component={NotFoundPage} />
+        <Switch>
+          <Route exact path={HOME_PAGE_ROUTE} render={() => <Home />} />
+          <Route path={TUTORIALS_PAGE_ROUTE} render={() => <Tutorials />} />
+          <Route path={articleRoute()} component={Article} />
+          <Route component={NotFoundPage} />
         </Switch>
         <Footer />
       </div>
