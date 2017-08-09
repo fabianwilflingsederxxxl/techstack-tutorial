@@ -1,0 +1,41 @@
+@import '~shared/styles/variables';
+
+.navigation {
+  background-color: #fff;
+  padding: 2px 10px;
+  display: flex;
+  /* display the navigation logo above the navigation list - aranges child items vertically */
+  flex-direction: column;
+}
+
+.navigationLogo {
+  font-weight: 300;
+  font-size: 25px;
+  color: $brand-primary;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.navigationList {
+  /* align child items in columns horizontally */
+  display: flex;
+  padding-left: 0;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.navigationListitem {
+  list-style-type: none;
+}
+
+.navigationHref {
+  padding: 10px 10px;
+  text-decoration: none;
+  color: #181818;
+  font-size: 16px;
+}
+
+.navigationHrefActive {
+  color: $brand-primary;
+}

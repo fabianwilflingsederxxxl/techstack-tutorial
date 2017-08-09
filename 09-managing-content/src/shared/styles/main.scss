@@ -1,0 +1,32 @@
+@import 'variables';
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  color: #252525;
+  padding: 0px;
+  font-family: 'Roboto', Helvetica, Arial;
+}
+
+h2 {
+  text-align: center;
+  letter-spacing: -0.5px;
+  font-weight: 300;
+  font-size: 30px;
+  margin-top: 50px;
+  font-weight: 300;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+
+.row {
+  display: block;
+}
