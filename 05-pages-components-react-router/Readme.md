@@ -398,7 +398,7 @@ export const firstEndpointRoute = num => `/ajax/first/${num || ':num'}`;
 
 The `/404` route is just going to be used in a navigation link for the sake of demonstrating what happens when you click on a broken link.
 
-**Create** a `src/client/component/Navigation/index.jsx` file containing:
+**Create** a `src/client/components/Navigation/index.jsx` file containing:
 
 ```jsx
 import React, { Component } from 'react';
