@@ -20,6 +20,7 @@ function renderApp(location, state, routerContext = {}) {
       <head>
         ${head.title}
         ${head.meta}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="${STATIC_PATH}/css/styles.css">
       </head>
       <body>

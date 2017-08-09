@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 
 import { APP_NAME } from 'shared/config';
 import Nav from 'shared/components/Navigation';
+import Footer from 'shared/components/Footer';
 
 // Pages
 import Home from 'shared/pages/Home';
@@ -28,6 +29,7 @@ class App extends Component {
           <Route path={TUTORIALS_PAGE_ROUTE} render={() => <Tutorials />} />
           <Route component={NotFoundPage} />
         </Switch>
+        <Footer />
       </div>
     );
   }

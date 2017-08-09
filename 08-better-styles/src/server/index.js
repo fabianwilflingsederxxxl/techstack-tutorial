@@ -1,9 +1,10 @@
 import compression from 'compression';
 import express from 'express';
 
-import routing from './routing';
 import { STATIC_PATH, WEB_PORT } from 'shared/config';
 import { isProd } from 'shared/util';
+
+import routing from './routing';
 
 const app = express();
 
