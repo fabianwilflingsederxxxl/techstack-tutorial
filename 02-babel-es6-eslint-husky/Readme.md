@@ -194,7 +194,7 @@ Okay so we now have this neat `test` task that tells us if our code looks good o
 
 * **Run** `yarn add --dev husky`
 
-All we have to do is to create two new tasks in `scripts`, `precommit` and `prepush`:
+All we have to do is to create two new tasks in `scripts` and `precommit`:
 
 ```json
 "scripts": {
