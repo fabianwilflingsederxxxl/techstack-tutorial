@@ -1,8 +1,8 @@
 # 08 - Better Styles
 
-Alright! It's time to give our ugly app a facelift. 
+Alright! It's time to give our ugly app a facelift.
 
-There are a few things about our App that make it ugly and reduce the reusability of our code. 
+There are a few things about our App that make it ugly and reduce the reusability of our code.
 
 
 1. No CI Font - currently we're using "Verdana". We'll switch this out to match the Corporate Design Font "Roboto" of xxxl.digital
@@ -11,7 +11,7 @@ There are a few things about our App that make it ugly and reduce the reusabilit
 4. Viewport Meta tag for responsive layouts
 5. Header Component - Currently there's we only use the H1 Tag in the Homepage Component, missing a key Element for SEO (Search Engine Optimization) and a big part in getting users attention. For this we'll be using a custom Header component
 6. Navigation - it's ugly and not usable on mobile screens
-7. Footer 
+7. Footer
 8. Button Styling
 
 
@@ -22,7 +22,7 @@ Here's a quick preview of what the site will look after finishing this chapter
 
 ## CI Font
 
-The change needed to include the CI font is minor, just add a link tag to load the "Roboto" font from Google webfonts. 
+The change needed to include the CI font is minor, just add a link tag to load the "Roboto" font from Google webfonts.
 
 
 **Edit** `src/server/render-app.jsx` in the render function like so:
@@ -45,7 +45,7 @@ ${head.meta}
 
 ```
 
-This allows us to use media queries and responsive design in general 
+This allows us to use media queries and responsive design in general
 
 <br>
 
@@ -98,7 +98,7 @@ h2 {
 
 ## Header Component
 
-The header component requires to get a "text" prop of type string passed that will get used for the H1 element of the page. 
+The header component requires to get a "text" prop of type string passed that will get used for the H1 element of the page.
 
 To make the header a bit prettier we're adding a background image of the team with a colored overlay
 
@@ -128,7 +128,7 @@ Header.propTypes = {
 export default Header;
 
 ```
-In this part we'll use flexbox to vertically center the "heading" div of the `Header` component 
+In this part we'll use flexbox to vertically center the "heading" div of the `Header` component
 
 > **[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)** Flexbox makes it ease to create align items inside of a container. The idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space, or shrinks them to prevent overflow.
 
@@ -191,7 +191,7 @@ import Header from 'shared/components/Header';
 // lets use use the classes specified in the global main.scss file
 import main from '../../styles/main.scss';
 
-    
+
     // [...]
     <Helmet
       title={'Tutorials'}
@@ -207,7 +207,7 @@ import main from '../../styles/main.scss';
 // [...]
 import Header from 'shared/components/Header';
 import main from '../../styles/main.scss';
-    
+
   // [...]
   render() {
     return (
@@ -235,7 +235,7 @@ import Button from 'shared/components/Button';
 import Header from 'shared/components/Header';
 
 import main from '../../styles/main.scss';
-    
+
   // [...]
   render() {
     return (
@@ -389,7 +389,7 @@ export default Footer;
 }
 ```
 
-Include the footer on every page: 
+Include the footer on every page:
 
 **Modify** content of `shared/app.jsx`
 
@@ -473,27 +473,27 @@ class Button extends Component {
 
 ```
 
-Now the site is ready for action. 
+Now the site is ready for action.
 
 
 
 :::info
-**Visit** localhost:8000 
+**Visit** localhost:8000
 :::
 
 :::success
-Congratulations, you completed Page 8! 
+Congratulations, you completed Page 8!
 
-Dont forget to: 
+Dont forget to:
 
-**run** `git add .` 
+**run** `git add .`
 and then
-`git commit -m="Page 8"` 
+`git commit -m="Page 8"`
 :::
 
 ---
 
 
-Next section: [09 - Managing Content](https://hackmd.io/KYZgHCBMkMYIYFoAsB2OATZBGEiCc66wCwARmAAwCsNKYVKSQA==?view)
+Next section: [09 - Managing Content](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/09-managing-content/Readme.md)
 
-Back to the [previous section](https://hackmd.io/MwdgpgTARiUBwFoAm0BmCAsBGYGEEMBOANnUKUKwnwAYbUMlgg==?view) or the [table of contents](https://hackmd.io/JwFghsCmBmBGBMBaWkDsBmR5asWS6kiBAxiAGwAcAjGNCSbEA===?view#table-of-contents).
+Back to the [previous section](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/07-component-based-styling/Readme.md) or the [table of contents](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/Readme.md).

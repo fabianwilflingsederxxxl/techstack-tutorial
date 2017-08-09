@@ -500,6 +500,6 @@ and then
 
 ---
 
-Next section: [06 - Server-Side Rendering and Helmet](https://hackmd.io/AwEwTAZgbCwQtFAjADgIbwCwFYULQKYDMCIKRRAxkgJwBGBYdaQA?view)
+Next section: [06 - Server-Side Rendering and Helmet](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/06-ssr-helmet/Readme.md)
 
-Back to the [previous section](https://hackmd.io/GzDsE4A4FYCZYLQCNjQAwICzlAMweAMzjAKQCGsuqkApjAMahA==?view) or the [table of contents](https://hackmd.io/JwFghsCmBmBGBMBaWkDsBmR5asWS6kiBAxiAGwAcAjGNCSbEA===?view).
+Back to the [previous section](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/04-webpack-react-hmr/Readme.md) or the [table of contents](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/Readme.md).

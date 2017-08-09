@@ -1,19 +1,15 @@
----
-breaks: true
----
-
 # 01 - Node, Yarn, and `package.json`
 
-Welcome to our xxxlutz Development Tutorial. This contains content and information you need to get your Javascript Development started. This is heavily influenced (and copied lots of stuff) by [verekias stack](https://github.com/verekia/js-stack-from-scratch) but adapted for xxxlutz specific Development. 
+Welcome to our xxxlutz Development Tutorial. This contains content and information you need to get your Javascript Development started. This is heavily influenced (and copied lots of stuff) by [verekias stack](https://github.com/verekia/js-stack-from-scratch) but adapted for xxxlutz specific Development.
 
 
 We start with the very basics, if you know most of the setup you will be faster, if not you have till tomorrow to finish your setup and we are there to help you out. Have fun Coding!
 
-The main Development program is **[Google Chrome](https://www.google.de/chrome/browser/desktop/index.html)**, especially the Console (Press `F12`) for debugging. 
+The main Development program is **[Google Chrome](https://www.google.de/chrome/browser/desktop/index.html)**, especially the Console (Press `F12`) for debugging.
 
 ## IDE / Texteditor
 
-This Tutorial is created for the Texteditor **[Visual Code Studio](https://code.visualstudio.com/)**, but the Development would actually work with any Editor. So if you rather prefer Atom, Sublime Text oder Notepad you can use it to. 
+This Tutorial is created for the Texteditor **[Visual Code Studio](https://code.visualstudio.com/)**, but the Development would actually work with any Editor. So if you rather prefer Atom, Sublime Text oder Notepad you can use it to.
 
 In this section we will set up Node, Yarn, a basic `package.json` file, and try a package.
 
@@ -83,7 +79,7 @@ Here's the basic `package.json` file
 
 ## `start` script
 
-Running `node .` to execute our program is a bit too low-level. We are going to use an NPM/Yarn script to trigger the execution of that code instead. 
+Running `node .` to execute our program is a bit too low-level. We are going to use an NPM/Yarn script to trigger the execution of that code instead.
 
 This lets use use `yarn start`, even when our program gets more complicated.
 
@@ -120,10 +116,10 @@ Initialize a Git repository with `git init`
 
 <br>
 
-After completing a page successfully 
-**run** `git add .` 
+After completing a page successfully
+**run** `git add .`
 and then
-`git commit -m="[Page]"` 
+`git commit -m="[Page]"`
 
 replace `[Page]` with the currently completed page
 
@@ -192,6 +188,6 @@ There are two kinds of package dependencies, `"dependencies"` and `"devDependenc
 
 **Dev Dependencies** are libraries used during development or to build your application (Webpack, SASS, linters, testing frameworks, etc). You install those with `yarn add --dev [package]`.
 
-Next section: [02 - Babel, ES6, ESLint and Husky](https://hackmd.io/IYVgpiBmwMYgtATgAzICzzQJkgEyTAOwIAcIAzLmClliZIUA?view)
+Next section: [02 - Babel, ES6, ESLint and Husky](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/02-babel-es6-eslint-husky/Readme.md)
 
-Back to the [table of contents](https://hackmd.io/JwFghsCmBmBGBMBaWkDsBmR5asWS6kiBAxiAGwAcAjGNCSbEA===?view#table-of-contents).
+Back to the [table of contents](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/Readme.md).

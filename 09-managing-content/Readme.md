@@ -283,14 +283,14 @@ export default Tutorials;
 ```
 
 :::success
-Congratulations, you completed Page 9! 
+Congratulations, you completed Page 9!
 
-Dont forget to: 
+Dont forget to:
 
-**run** `git add .` 
+**run** `git add .`
 and then
-`git commit -m="Page 9"` 
+`git commit -m="Page 9"`
 :::
 ---
 
-Back to the [previous section](https://hackmd.io/IYTgbApiDsDGwFoDMAmAJgBgQFgKy8RDVlwWICNcIUUltolog===?view) or the [table of contents](https://hackmd.io/JwFghsCmBmBGBMBaWkDsBmR5asWS6kiBAxiAGwAcAjGNCSbEA===?view).
+Back to the [previous section](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/08-better-styles/Readme.md) or the [table of contents](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/Readme.md).

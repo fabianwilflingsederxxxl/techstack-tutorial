@@ -14,7 +14,7 @@ The first thing we're going to do here is to migrate most of our client code to 
 
 We have to adjust a whole bunch of imports:
 
-**Replace**  the 3 occurrences of `'./app'` by `'../shared/app'` in `src/client/index.jsx` 
+**Replace**  the 3 occurrences of `'./app'` by `'../shared/app'` in `src/client/index.jsx`
 
 **Replace** `'../shared/routes'` by `'./routes'` and `'../shared/config'` by `'./config'` in `src/shared/app.jsx`
 
@@ -268,17 +268,17 @@ The `<Helmet>` component doesn't actually render anything, it just injects conte
 
 
 :::success
-Congratulations, you completed Page 6! 
+Congratulations, you completed Page 6!
 
-Dont forget to: 
+Dont forget to:
 
-**run** `git add .` 
+**run** `git add .`
 and then
-`git commit -m="Page 6"` 
+`git commit -m="Page 6"`
 :::
 
 ---
 
-Next section: [07 - Component based Styling](https://hackmd.io/MwdgpgTARiUBwFoAm0BmCAsBGYGEEMBOANnUKUKwnwAYbUMlgg==?view)
+Next section: [07 - Component based Styling](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/07-component-based-styling/Readme.md)
 
-Back to the [previous section](https://hackmd.io/JwEwTAzGIMYIwFoQHZhgQFgKYFYsIA4dkAGBPDAsZOEjANgIDMg=?view) or the [table of contents](https://hackmd.io/JwFghsCmBmBGBMBaWkDsBmR5asWS6kiBAxiAGwAcAjGNCSbEA===?view).
+Back to the [previous section](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/05-pages-components-react-router/Readme.md) or the [table of contents](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/Readme.md).

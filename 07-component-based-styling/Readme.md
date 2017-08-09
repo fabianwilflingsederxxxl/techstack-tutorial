@@ -67,7 +67,7 @@ To combine the configurations we will use the library webpack-merge, so install 
 
 Now put the content of the default export to an constant `commonConfig` and remove all conditions, where we were checking if isProd is true or other dev settings where made. On Bottom we now define an variable that contains the setup specific config:
 
-**Update** `webpack.config.babel.js` 
+**Update** `webpack.config.babel.js`
 ```jsx
 import path from 'path';
 import webpack from 'webpack';
@@ -113,16 +113,16 @@ export default config;
 
 ### Production Settings
 
-In Production we need to ensure three things: 
+In Production we need to ensure three things:
 - Render the Page on Server
 - Combine all Styles in a styles.css
 - Combine Application logic in bundle.js
 
 #### Render Page on Server & Combine all Styles
 
-In production the Server initiates the Server Side Rendering in lib/server, that was compiled by babel. During that compiling we need to tell babel, how to handle css files. 
+In production the Server initiates the Server Side Rendering in lib/server, that was compiled by babel. During that compiling we need to tell babel, how to handle css files.
 
-For this we use the Babel plugin `babel-plugin-css-modules-transform`. 
+For this we use the Babel plugin `babel-plugin-css-modules-transform`.
 
 :::info
 **Run:** `yarn add --dev babel-plugin-css-modules-transform`
@@ -249,11 +249,11 @@ You will find a css/styles.css file with following content:
 
 ### Development Settings
 
-In Development we need to tell babel for Server Side Rendering as well, how the loader should handle css files. This behaves exactly the same as on production and therefor the `.babelrc` config works here as well. 
+In Development we need to tell babel for Server Side Rendering as well, how the loader should handle css files. This behaves exactly the same as on production and therefor the `.babelrc` config works here as well.
 
-But we want to have `Hot Module Reload` with `webpack` and therefore dont want to use an external file for our development changes. 
+But we want to have `Hot Module Reload` with `webpack` and therefore dont want to use an external file for our development changes.
 
-To use a different css handling we have to tell `webpack` and explicitly the `babel-loader` first, that it shouldn't use the babel config in webpack. 
+To use a different css handling we have to tell `webpack` and explicitly the `babel-loader` first, that it shouldn't use the babel config in webpack.
 
 And then we need to set a specific css handling for Development, check out the config how we treat those conditions:
 
@@ -404,7 +404,7 @@ To use Sass files, we have to change the css loader in our webpack config and ad
 
 The .babelrc file is a json and css-modules-transform needs to refer to an function defined elsewhere. So we **create** the file `babelrc.js` in root with content:
 
-```jsx 
+```jsx
 // ./path/to/module-exporting-a-function.js
 var sass = require('node-sass');
 var path = require('path');
@@ -625,17 +625,17 @@ Keep HMR active, to see if it works correctly.
 That was a tough one, not just for you but for us as well. When you came that far visit us and lets talk about the stuff that just happened. (florian)
 
 :::success
-Congratulations, you completed Page 7! 
+Congratulations, you completed Page 7!
 
-Dont forget to: 
+Dont forget to:
 
-**run** `git add .` 
+**run** `git add .`
 and then
-`git commit -m="Page 7"` 
+`git commit -m="Page 7"`
 :::
 
 ---
 
-Next section: [08 - Better Styles](https://hackmd.io/IYTgbApiDsDGwFoDMAmAJgBgQFgKy8RDVlwWICNcIUUltolog===?view)
+Next section: [08 - Better Styles](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/08-better-styles/Readme.md)
 
-Back to the [previous section](https://hackmd.io/AwEwTAZgbCwQtFAjADgIbwCwFYULQKYDMCIKRRAxkgJwBGBYdaQA?view) or the [table of contents](https://hackmd.io/JwFghsCmBmBGBMBaWkDsBmR5asWS6kiBAxiAGwAcAjGNCSbEA===?view).
+Back to the [previous section](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/06-ssr-helmet/Readme.md) or the [table of contents](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/Readme.md).

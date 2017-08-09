@@ -19,7 +19,7 @@ We're using a *template string* here, which is an ES6 feature that lets us injec
 **Run:** `yarn add --dev babel-cli` to install the CLI interface for Babel.
 :::
 
-Babel CLI comes with [two executables](https://babeljs.io/docs/usage/cli/): `babel`, which compiles ES6 files into new ES5 files, and `babel-node`, which you can use to replace your call to the `node` binary and execute ES6 files directly on the fly. 
+Babel CLI comes with [two executables](https://babeljs.io/docs/usage/cli/): `babel`, which compiles ES6 files into new ES5 files, and `babel-node`, which you can use to replace your call to the `node` binary and execute ES6 files directly on the fly.
 
 `babel-node` is great for development but it is heavy and not meant for production. In this chapter we are going to use `babel-node` to set up the development environment, and in the next one we'll use `babel` to build ES5 files for production.
 
@@ -106,7 +106,7 @@ In `Sessel.js`, we also replace `module.exports = Sessel` by `export default Ses
 
 ESLint works with *rules*, and there are [many of them](http://eslint.org/docs/rules/). Instead of configuring the rules we want for our code ourselves, we will use the config created by Airbnb. This config uses a few plugins, so we need to install those as well.
 
-Check out Airbnb's most recent [instructions](https://www.npmjs.com/package/eslint-config-airbnb) to install the config package and all its dependencies correctly. 
+Check out Airbnb's most recent [instructions](https://www.npmjs.com/package/eslint-config-airbnb) to install the config package and all its dependencies correctly.
 
 :::info
 **Run:**
@@ -190,7 +190,7 @@ We will use a **[prettier-eslint](https://github.com/prettier/prettier-eslint)**
 
 > We want **VS Code** to format our code using Prettier after saving a file.
 > Press `CMD + ,` if you’re on a Mac - to open the VS Code Workspace Settings - then add the following:
-```javascript 
+```javascript
 {
     // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
     "editor.formatOnSave": true,
@@ -233,7 +233,7 @@ All we have to do is to create two new tasks in `scripts`, `precommit` and `prep
 
 If you now try to commit your code, it should automatically run the `test` task.
 
-If you encounter any issues: 
+If you encounter any issues:
 
 :::info
 **Run** `yarn add --dev husky --force`
@@ -241,16 +241,16 @@ If you encounter any issues:
 
 
 :::success
-Congratulations, you completed Page 2! 
+Congratulations, you completed Page 2!
 
-Dont forget to: 
+Dont forget to:
 
-**run** `git add .` 
+**run** `git add .`
 and then
-`git commit -m="Page 2"` 
+`git commit -m="Page 2"`
 :::
 
 
-Next section: [03 - Express, Nodemon, and PM2](https://hackmd.io/KwRg7ATAhgRgHAMwLQFMAMATOSAsXkwwgBsucMoxKUGwAnBEA===?view)
+Next section: [03 - Express, Nodemon, and PM2](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/03-express-nodemon-pm2/Readme.md)
 
-Back to the [previous section](https://hackmd.io/BwQwpgbARgrMAsBaAzAEwGYGNHwEyUQE4wB2dRARlUMxJnWAAYKQQg==?view) or the [table of contents](https://hackmd.io/JwFghsCmBmBGBMBaWkDsBmR5asWS6kiBAxiAGwAcAjGNCSbEA===?view#table-of-contents).
+Back to the [previous section](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/01-node-yarn-package-json/Readme.md) or the [table of contents](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/Readme.md).
