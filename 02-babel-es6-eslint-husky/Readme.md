@@ -15,9 +15,7 @@ console.log(`Hello ${str}`);
 
 We're using a *template string* here, which is an ES6 feature that lets us inject variables directly inside the string without concatenation using `${}`. Note that template strings are created using **backquotes**.
 
-:::info
-**Run:** `yarn add --dev babel-cli` to install the CLI interface for Babel.
-:::
+* **Run:** `yarn add --dev babel-cli` to install the CLI interface for Babel.
 
 Babel CLI comes with [two executables](https://babeljs.io/docs/usage/cli/): `babel`, which compiles ES6 files into new ES5 files, and `babel-node`, which you can use to replace your call to the `node` binary and execute ES6 files directly on the fly.
 
@@ -27,9 +25,7 @@ In `package.json`, in your `start` script, **replace** `node .` with `babel-node
 
 Running `yarn start` now, it will print the correct output, but Babel is not actually doing anything. That's because we didn't give it any information about the transformations we want to apply. The only reason it prints the right output is because Node natively understands ES6 without Babel's help. Some browsers or older versions of Node would not be so successful though!
 
-:::info
-**Run:** `yarn add --dev babel-preset-env` to install a Babel preset package called `env`, which contains configurations for the most recent ECMAScript features supported by Babel.
-:::
+* **Run:** `yarn add --dev babel-preset-env` to install a Babel preset package called `env`, which contains configurations for the most recent ECMAScript features supported by Babel.
 
 **Create** a `.babelrc` file at the root of your project, which is a JSON file for your Babel configuration. Insert the this snippet to make Babel use the `env` preset:
 
@@ -79,40 +75,31 @@ console.log(redChair.info());
 
 As you can see, unlike the community-made package `color` that we used before, when we require one of our files, we use `./` in the `require()`.
 
-:::info
-
-**Run:** `yarn start`
-<br>
+* **Run:** `yarn start`
 
     I am a red Chair.
 
-
-:::
 ### The ES6 modules syntax
 
 Here we simply replace `const Sessel = require('./Sessel');` by `import Sessel from './Sessel';`, which is the newer ES6 modules syntax (as opposed to "CommonJS" modules syntax). It is currently not natively supported by NodeJS, but Babel processes those ES6 files correctly.
 
 In `Sessel.js`, we also replace `module.exports = Sessel` by `export default Sessel`
 
-:::info
-**Run:** `yarn start`
-<br>
+* **Run:** `yarn start`
 
     I am a red Chair.
-:::
+
 ## ESLint
 
-> 💡 **[ESLint](http://eslint.org)** is the linter of choice for ES6 code. A linter gives you recommendations about code formatting, which enforces style consistency in your code, and code you share with your team. It's also a great way to learn about JavaScript by making mistakes that ESLint will catch.
+> **[ESLint](http://eslint.org)** is the linter of choice for ES6 code. A linter gives you recommendations about code formatting, which enforces style consistency in your code, and code you share with your team. It's also a great way to learn about JavaScript by making mistakes that ESLint will catch.
 
 ESLint works with *rules*, and there are [many of them](http://eslint.org/docs/rules/). Instead of configuring the rules we want for our code ourselves, we will use the config created by Airbnb. This config uses a few plugins, so we need to install those as well.
 
 Check out Airbnb's most recent [instructions](https://www.npmjs.com/package/eslint-config-airbnb) to install the config package and all its dependencies correctly.
 
-:::info
-**Run:**
+* **Run:**
 `yarn add --dev eslint-config-airbnb@latest eslint@4.3.0 eslint-plugin-jsx-a11y@5.1.1 eslint-plugin-import@2.7.0 eslint-plugin-react@7.1.0
 `
-:::
 
 **Create** an `.eslintrc.json` file at the root of your project, just like we did for Babel, and write the following to it:
 
@@ -135,26 +122,19 @@ Here we just tell ESLint that we want it to lint all JavaScript files under the 
 
 We will use this standard `test` task to run a chain of all the commands that validate our code, whether it's linting, type checking, or unit testing.
 
-:::info
-
-**Run** `yarn test`
+* **Run** `yarn test`
 
 You'll see a whole bunch of errors for missing semicolons, and a warning for using `console.log()` in `index.js`.
 
-:::
-
 Add `/* eslint-disable no-console */` at the top of our `index.js` file to allow the use of `console` in this file.
 
-:::info
-**Run** `yarn test` again and now all tests should pass.
-:::
+* **Run** `yarn test` again and now all tests should pass.
+
 ### Compat
 
 [Compat](https://github.com/amilajack/eslint-plugin-compat) is a neat ESLint plugin that warns you if you use some JavaScript APIs that are not available in the browsers you need to support. It uses [Browserslist](https://github.com/ai/browserslist), which relies on [Can I Use](http://caniuse.com/).
 
-:::info
-**Run:** `yarn add --dev eslint-plugin-compat`
-:::
+* **Run:** `yarn add --dev eslint-plugin-compat`
 
 - Add the following to your `package.json`, to indicate that we want to support browsers that have more than 1% market share:
 
@@ -202,24 +182,17 @@ We will use a **[prettier-eslint](https://github.com/prettier/prettier-eslint)**
 ```
 > You need to reload to see the extensions in action. For other Texteditors the setup will vary
 
-
-
-:::info
-**Run** `yarn add --dev prettier-eslint`
-:::
-
+* **Run** `yarn add --dev prettier-eslint`
 
 ## Git Hooks with Husky
 
-> 💡 **[Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)**: Scripts that are run when certain actions like a commit or a push occur.
+> **[Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)**: Scripts that are run when certain actions like a commit or a push occur.
 
 Okay so we now have this neat `test` task that tells us if our code looks good or not. We're going to set up Git Hooks to automatically run this task before every `git commit` and `git push`, which will prevent us from pushing bad code to the repository if it doesn't pass the `test` task.
 
 [Husky](https://github.com/typicode/husky) is a package that makes this very easy to set up Git Hooks.
 
-:::info
-**Run** `yarn add --dev husky`
-:::
+* **Run** `yarn add --dev husky`
 
 All we have to do is to create two new tasks in `scripts`, `precommit` and `prepush`:
 
@@ -235,20 +208,15 @@ If you now try to commit your code, it should automatically run the `test` task.
 
 If you encounter any issues:
 
-:::info
-**Run** `yarn add --dev husky --force`
-:::
+* **Run** `yarn add --dev husky --force`
 
-
-:::success
-Congratulations, you completed Page 2!
+* Congratulations, you completed Page 2!
 
 Dont forget to:
 
 **run** `git add .`
 and then
 `git commit -m="Page 2"`
-:::
 
 
 Next section: [03 - Express, Nodemon, and PM2](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/03-express-nodemon-pm2/Readme.md)

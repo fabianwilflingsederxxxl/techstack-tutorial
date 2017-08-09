@@ -69,12 +69,9 @@ Here's the basic `package.json` file
 
 **Create** an `index.js` file containing `console.log('Hello world');`
 
-:::info
-**Run:** `node .` in this folder (`index.js` is the default file Node looks for in a folder). It should print:
-<br>
+* **Run:** `node .` in this folder (`index.js` is the default file Node looks for in a folder). It should print:
 
     Hello world
-:::
 
 
 ## `start` script
@@ -101,17 +98,12 @@ In `package.json`, **add** a `scripts` section:
 
 `package.json` must be a valid JSON file, which means that you cannot have trailing commas. So be careful when editing manually your `package.json` file.
 
-:::info
-**Run:** `yarn start`
-
-<br>
+* **Run:** `yarn
 
     Hello world
-:::
 
 ## Git and `.gitignore`
 
-:::success
 Initialize a Git repository with `git init`
 
 <br>
@@ -126,8 +118,6 @@ replace `[Page]` with the currently completed page
 <br>
 
 At the end of every page, we'll remind you to commit your changes.
-:::
-
 
 - **Create** a `.gitignore` file and add the following to it:
 
@@ -164,21 +154,15 @@ const redHexa = color({ r: 255, g: 0, b: 0 }).hex();
 console.log(redHexa);
 ```
 
-:::info
-**Run:** `yarn start`
-
-<br>
+* **Run:** `yarn start`
 
     #FF0000
-:::
 
 Congratulations, you installed and used a package!
 
 `color` is just used in this section to teach you how to use a simple package. We won't need it anymore, so you can uninstall it:
 
-:::info
-**Run:** `yarn remove color`
-:::
+* **Run:** `yarn remove color`
 
 ## Two kinds of dependencies
 
