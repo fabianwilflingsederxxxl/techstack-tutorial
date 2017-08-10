@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 
 import Header from 'shared/components/Header';
 
+import main from 'shared/styles/main.scss';
+
 class Tutorials extends Component {
   render() {
     return (
@@ -12,7 +14,9 @@ class Tutorials extends Component {
           meta={[{ name: 'description', content: 'Tutorial Page description' }]}
         />
         <Header text="Tutorials" />
-        <p>Tutorial List here</p>
+        <div className={main.container}>
+          <p>Tutorial List here</p>
+        </div>
       </div>
     );
   }
