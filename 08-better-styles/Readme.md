@@ -30,7 +30,7 @@ The change needed to include the CI font is minor, just add a link tag to load t
 ```jsx
 // [...]
       <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
-      </head>
+    </head>
 // [...]
 ```
 
@@ -42,12 +42,11 @@ The change needed to include the CI font is minor, just add a link tag to load t
 // [...]
 ${head.meta}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+${stylesheet}
+// [...]
 ```
 
 This allows us to use media queries and responsive design in general
-
-<br>
 
 We're now adding the font-family in our css and create a container and row class that can get used by our react components.
 

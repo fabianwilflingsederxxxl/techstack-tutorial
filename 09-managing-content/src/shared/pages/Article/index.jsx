@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import main from 'shared/styles/main.scss';
+import main from '../../styles/main.scss';
 
 import { readDocument, markupDocument } from './helpers';
 

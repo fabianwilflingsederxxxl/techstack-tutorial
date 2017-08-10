@@ -15,19 +15,25 @@ function renderApp(location, state, routerContext = {}) {
   );
   const head = Helmet.rewind();
 
+  const stylesheet = isProd
+    ? `<link rel="stylesheet" href="${STATIC_PATH}/css/styles.css">`
+    : '';
+  const script = isProd
+    ? `<script src="${STATIC_PATH}/js/bundle.js"></script>`
+    : `<script src="http://localhost:${WDS_PORT}/dist/js/bundle.js"></script>`;
+
   return `<!doctype html>
     <html>
       <head>
         ${head.title}
         ${head.meta}
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="${STATIC_PATH}/css/styles.css">
+        ${stylesheet}
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
       </head>
       <body>
         <div class="${APP_CONTAINER_CLASS}">${appHtml}</div>
-        <script src="${isProd
-    ? STATIC_PATH
-    : `http://localhost:${WDS_PORT}/dist`}/js/bundle.js"></script>
+        ${script}
       </body>
     </html>`;
 }

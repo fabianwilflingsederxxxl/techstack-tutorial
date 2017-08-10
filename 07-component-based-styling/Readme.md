@@ -177,18 +177,29 @@ Pretty simple. We don't need any css file handling, because the babel-loader use
 
 ### Link the extracted stylesheet from the application
 
-**Modify** `src/server/render-app.jsx`
+In production mode we link the stylesheet with a `<link>` tag. In dev mode we
+rely on `style-loader` to inject a `<style>` tag containing the extracted style
+into the page to allow for HMR of stylesheets.
 
+**Modify** `src/server/render-app.jsx`
 
 ```jsx
 // [...]
-    ${head.title}
-    ${head.meta}
-    <link rel="stylesheet" href="${STATIC_PATH}/css/styles.css">
+const stylesheet = isProd
+  ? `<link rel="stylesheet" href="${STATIC_PATH}/css/styles.css">`
+  : '';
+const script = isProd
+  ? `<script src="${STATIC_PATH}/js/bundle.js"></script>`
+  : `<script src="http://localhost:${WDS_PORT}/dist/js/bundle.js"></script>`;
+// [...]
+<head>
+  ${head.title}
+  ${head.meta}
+  ${stylesheet}
 </head>
 <body>
-    <div class="${APP_CONTAINER_CLASS}">${appHtml}</div>
-// [...]
+  <div class="${APP_CONTAINER_CLASS}">${appHtml}</div>
+  // [...]
 ```
 
 Lets try it out:

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import Header from 'shared/components/Header';
-import main from 'shared/styles/main.scss';
+
+import main from '../../styles/main.scss';
 
 import Tutorial from './components/Tutorial';
 
@@ -15,7 +16,7 @@ class Tutorials extends Component {
         />
         <Header text="Tutorials" />
         <div className={main.container}>
-          <div>
+          <div className={main.row}>
             <Tutorial docname="lorem" title="Lorem ipsum dolor sit amet">
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
               invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et

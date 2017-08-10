@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import Header from 'shared/components/Header';
 
-import main from 'shared/styles/main.scss';
+import main from '../../styles/main.scss';
 
 class Tutorials extends Component {
   render() {

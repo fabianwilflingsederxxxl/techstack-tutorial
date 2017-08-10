@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { APP_NAME } from 'shared/config';
-import main from 'shared/styles/main.scss';
+import main from '../../styles/main.scss';
 import styles from './style.scss';
 
 class Footer extends Component {

@@ -5,9 +5,9 @@ import React, { Component } from 'react';
 import Button from 'shared/components/Button';
 import Header from 'shared/components/Header';
 
-import main from 'shared/styles/main.scss';
-
 import { firstEndpointRoute } from 'shared/routes';
+
+import main from '../../styles/main.scss';
 
 class Home extends Component {
   constructor(props) {

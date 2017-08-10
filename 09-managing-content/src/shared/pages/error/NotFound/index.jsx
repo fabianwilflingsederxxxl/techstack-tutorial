@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
 import Header from 'shared/components/Header';
-import main from 'shared/styles/main.scss';
+import main from '../../../styles/main.scss';
 
 class NotFoundPage extends Component {
   render() {
