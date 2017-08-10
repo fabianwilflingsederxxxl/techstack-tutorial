@@ -19,7 +19,7 @@ import Helmet from 'react-helmet';
 
 import main from '../../styles/main.scss';
 
-import { readDocument, markupDocument } from './helpers';
+import { readDocument, markupDocument } from '../helpers';
 
 class Article extends Component {
   constructor(props) {
