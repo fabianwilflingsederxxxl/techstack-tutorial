@@ -214,7 +214,7 @@ import main from '../../styles/main.scss';
 ```jsx
 // [...]
 import Header from 'shared/components/Header';
-import main from '../../styles/main.scss';
+import main from '../../../styles/main.scss';
 
   // [...]
   render() {
