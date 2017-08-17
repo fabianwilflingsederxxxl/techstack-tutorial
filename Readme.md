@@ -9,3 +9,4 @@
 * [07 - Bootstrap and CSS Modules](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/07-component-based-styling/Readme.md)
 * [08 - Developers Portal](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/08-better-styles/Readme.md)
 * [09 - Managing Content](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/09-managing-content/Readme.md)
+* [10 - Get Data via Github](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/10-get-data-via-github/Readme.md)
