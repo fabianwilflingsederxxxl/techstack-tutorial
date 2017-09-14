@@ -219,6 +219,6 @@ and then
 `git commit -m="Page 2"`
 
 
-Next section: [03 - Express, Nodemon, and PM2](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/03-express-nodemon-pm2/Readme.md)
+Next section: [03 - Express, Nodemon, and PM2](../03-express-nodemon-pm2/Readme.md)
 
-Back to the [previous section](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/01-node-yarn-package-json/Readme.md) or the [table of contents](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/Readme.md).
+Back to the [previous section](../01-node-yarn-package-json/Readme.md) or the [table of contents](../Readme.md).

@@ -172,6 +172,6 @@ There are two kinds of package dependencies, `"dependencies"` and `"devDependenc
 
 **Dev Dependencies** are libraries used during development or to build your application (Webpack, SASS, linters, testing frameworks, etc). You install those with `yarn add --dev [package]`.
 
-Next section: [02 - Babel, ES6, ESLint and Husky](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/02-babel-es6-eslint-husky/Readme.md)
+Next section: [02 - Babel, ES6, ESLint and Husky](../02-babel-es6-eslint-husky/Readme.md)
 
-Back to the [table of contents](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/Readme.md).
+Back to the [table of contents](../Readme.md).

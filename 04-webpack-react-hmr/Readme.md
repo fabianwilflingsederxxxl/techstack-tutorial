@@ -306,6 +306,6 @@ Dont forget to:
 and then
 `git commit -m="Page 4"`
 
-Next section: [05 - Actions and React Router](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/05-pages-components-react-router/Readme.md)
+Next section: [05 - Actions and React Router](../05-pages-components-react-router/Readme.md)
 
-Back to the [previous section](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/03-express-nodemon-pm2/Readme.md) or the [table of contents](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/Readme.md).
+Back to the [previous section](../03-express-nodemon-pm2/Readme.md) or the [table of contents](../Readme.md).
