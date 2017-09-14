@@ -491,6 +491,6 @@ and then
 
 ---
 
-Next section: [06 - Server-Side Rendering and Helmet](06-ssr-helmet/Readme.md)
+Next section: [06 - Server-Side Rendering and Helmet](../06-ssr-helmet/Readme.md)
 
-Back to the [previous section](04-webpack-react-hmr/Readme.md) or the [table of contents](../Readme.md).
+Back to the [previous section](../04-webpack-react-hmr/Readme.md) or the [table of contents](../Readme.md).

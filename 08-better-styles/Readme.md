@@ -496,6 +496,6 @@ and then
 ---
 
 
-Next section: [09 - Managing Content](09-managing-content/Readme.md)
+Next section: [09 - Managing Content](../09-managing-content/Readme.md)
 
-Back to the [previous section](07-component-based-styling/Readme.md) or the [table of contents](../Readme.md).
+Back to the [previous section](../07-component-based-styling/Readme.md) or the [table of contents](../Readme.md).

@@ -218,6 +218,6 @@ and then
 
 ---
 
-Next section: [04 - Webpack, React, and Hot Module Replacement](04-webpack-react-hmr/Readme.md)
+Next section: [04 - Webpack, React, and Hot Module Replacement](../04-webpack-react-hmr/Readme.md)
 
-Back to the [previous section](02-babel-es6-eslint-husky/Readme.md) or the [table of contents](../Readme.md).
+Back to the [previous section](../02-babel-es6-eslint-husky/Readme.md) or the [table of contents](../Readme.md).

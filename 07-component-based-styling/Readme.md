@@ -627,6 +627,6 @@ and then
 
 ---
 
-Next section: [08 - Better Styles](08-better-styles/Readme.md)
+Next section: [08 - Better Styles](../08-better-styles/Readme.md)
 
-Back to the [previous section](06-ssr-helmet/Readme.md) or the [table of contents](../Readme.md).
+Back to the [previous section](../06-ssr-helmet/Readme.md) or the [table of contents](../Readme.md).
