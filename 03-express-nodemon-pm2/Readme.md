@@ -218,6 +218,6 @@ and then
 
 ---
 
-Next section: [04 - Webpack, React, and Hot Module Replacement](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/04-webpack-react-hmr/Readme.md)
+Next section: [04 - Webpack, React, and Hot Module Replacement](04-webpack-react-hmr/Readme.md)
 
-Back to the [previous section](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/02-babel-es6-eslint-husky/Readme.md) or the [table of contents](https://github.com/moonshiner-agency/LutzJsStackWalkthrough/blob/master/Readme.md).
+Back to the [previous section](02-babel-es6-eslint-husky/Readme.md) or the [table of contents](../Readme.md).
