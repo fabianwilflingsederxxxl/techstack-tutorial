@@ -289,5 +289,5 @@ and then
 `git commit -m="Page 9"`
 
 ---
-Next section: [10 - Get Data via Github](../10-get-data-via-github/Readme.md)
-Back to the [previous section](../08-better-styles/Readme.md) or the [table of contents](../Readme.md).
+Next section: [10 - Get Data via Github](https://github.com/XXXLutz/techstack-tutorial/blob/master/10-get-data-via-github/Readme.md)
+Back to the [previous section](https://github.com/XXXLutz/techstack-tutorial/blob/master/08-better-styles/Readme.md) or the [table of contents](https://github.com/XXXLutz/techstack-tutorial/blob/master/Readme.md).

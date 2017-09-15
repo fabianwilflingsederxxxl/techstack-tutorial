@@ -280,6 +280,6 @@ and then
 
 ---
 
-Next section: [07 - Component based Styling](../07-component-based-styling/Readme.md)
+Next section: [07 - Component based Styling](https://github.com/XXXLutz/techstack-tutorial/blob/master/07-component-based-styling/Readme.md)
 
-Back to the [previous section](../05-pages-components-react-router/Readme.md) or the [table of contents](../Readme.md).
+Back to the [previous section](https://github.com/XXXLutz/techstack-tutorial/blob/master/05-pages-components-react-router/Readme.md) or the [table of contents](https://github.com/XXXLutz/techstack-tutorial/blob/master/Readme.md).
