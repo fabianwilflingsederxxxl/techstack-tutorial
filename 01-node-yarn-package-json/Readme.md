@@ -1,17 +1,16 @@
 # 01 - Node, Yarn, and `package.json`
 
-Welcome to our xxxlutz Development Tutorial. This contains content and information you need to get your Javascript Development started. This is heavily influenced (and copied lots of stuff) by [verekias stack](https://github.com/verekia/js-stack-from-scratch) but adapted for xxxlutz specific Development.
+Welcome to our xxxlutz Development Tutorial. This contains content and information you need to get your Javascript Development started.
 
+We start with the very basics, if you know most of the setup you will be faster, if not just take you time and try to fully understand the topics we are going to tackle, it is ok to read into different technologies as well!
 
-We start with the very basics, if you know most of the setup you will be faster, if not you have till tomorrow to finish your setup and we are there to help you out. Have fun Coding!
-
-The main Development program is **[Google Chrome](https://www.google.de/chrome/browser/desktop/index.html)**, especially the Console (Press `F12`) for debugging.
+The main development interface is **[Google Chrome](https://www.google.de/chrome/browser/desktop/index.html)**, especially the Console (Press `F12`) for debugging.
 
 ## IDE / Texteditor
 
 This Tutorial is created for the Texteditor **[Visual Code Studio](https://code.visualstudio.com/)**, but the Development would actually work with any Editor. So if you rather prefer Atom, Sublime Text oder Notepad you can use it to.
 
-In this section we will set up Node, Yarn, a basic `package.json` file, and try a package.
+In this section we will set up Node, Yarn, a basic `package.json` file, and install a package.
 
 ## Node
 
@@ -28,7 +27,7 @@ sudo apt-get install -y nodejs
 
 If you already have nodejs installed on your machine, make sure you have a version > 6.5.0 using the command `node -v`
 
-On Windows open the NodeJs cmd as a terminal (command line interface - CLI)
+On Windows open the NodeJs cmd as a terminal (command line interface - CLI).
 
 ## NPM
 
@@ -51,10 +50,10 @@ For Windows download the executable from https://yarnpkg.com/latest.msi and run 
 > 💡 **[package.json](https://yarnpkg.com/en/docs/package-json)** is the file used to describe and configure your JavaScript project. It contains general information (your project name, version, contributors, license, etc), configuration options for tools you use, and even a section to run *tasks*.
 
 
-- Create a new folder to work in, and `cd` in it.
+- Create a new folder to work in, and `cd` into the folder.
 - Run `yarn init` and answer the questions (`yarn init -y` to skip all questions), to generate a `package.json` file automatically.
 
-Here's the basic `package.json` file
+This is how the basic `package.json` file looks like:
 
 ```json
 {
@@ -78,7 +77,7 @@ Here's the basic `package.json` file
 
 Running `node .` to execute our program is a bit too low-level. We are going to use an NPM/Yarn script to trigger the execution of that code instead.
 
-This lets use use `yarn start`, even when our program gets more complicated.
+This lets use  `yarn start`, even when our program gets more complicated.
 
 In `package.json`, **add** a `scripts` section:
 
