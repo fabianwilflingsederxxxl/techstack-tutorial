@@ -24,12 +24,12 @@ body {
 }
 
 h1 {
-  color: #ec008c;
+  color: #e20015;
 }
 ```
 
 - Create an empty `src/client/` folder.
-
+- Create an empty `src/server/` folder.
 - Create an empty `src/shared/` folder.
 
 This folder is where we put *isomorphic / universal* JavaScript code – files that are used by both the client and the server. A great use case of shared code is *routes*, as you will see later in this tutorial when we'll make an asynchronous call. Here we simply have some configuration constants as an example for now.
@@ -41,38 +41,24 @@ This folder is where we put *isomorphic / universal* JavaScript code – files t
 export const WEB_PORT = process.env.PORT || 8000;
 export const STATIC_PATH = '/static';
 export const APP_NAME = 'Hello App';
-```
-
-
-
-If the Node process used to run your app has a `process.env.PORT` environment variable set (that's the case when you deploy to Heroku for instance), it will use this for the port. If there is none, we default to `8000`.
-
-
-**Create** a `src/shared/util.js` file containing:
-
-```js
-// eslint-disable-next-line import/prefer-default-export
 export const isProd = process.env.NODE_ENV === 'production';
 ```
 
-That's a simple util to test if we are running in production mode or not. If the "NODE_ENV" is not set to "production" the code defaults to development. The `// eslint-disable-next-line import/prefer-default-export` comment is because we only have one named export here. You can remove it as you add other exports in this file.
+If the Node process used to run your app has a `process.env.PORT` environment variable set (that's the case when you deploy to Heroku for instance), it will use this for the port. If there is none, we default to `8000`.
 
+The isProd is a simple util to test if we are running in production mode or not. If the "NODE_ENV" is not set to "production" the code defaults to development.
 
 **Run:** `yarn add express compression`
 
-
 `compression` is an Express middleware to activate Gzip compression on the server.
 
-
 Create a `src/server/index.js` file containing:
-
 
 ```js
 import compression from 'compression';
 import express from 'express';
 
-import { APP_NAME, STATIC_PATH, WEB_PORT } from '../shared/config';
-import { isProd } from '../shared/util';
+import { APP_NAME, STATIC_PATH, WEB_PORT, isProd } from '../shared/config';
 import renderApp from './render-app';
 
 const app = express();
@@ -117,8 +103,6 @@ export default renderApp;
 
 You know how you typically have *templating engines* on the back-end? Well these are pretty much obsolete now that JavaScript supports template strings. Here we create a function that takes a `title` as a parameter and injects it in both the `title` and `h1` tags of the page, returning the complete HTML string. We also use a `STATIC_PATH` constant as the base path for all our static assets.
 
-
-
 In `package.json` **change** your `start` script to: `"start": "babel-node src/server",
 `
 
@@ -145,12 +129,11 @@ We are going to use Nodemon whenever we are in **development** mode.
 
 `start` is now just a pointer to `dev:start`.
 
-In `dev:start`, the `--ignore lib` indicates to *not* restart the server when changes happen in the `lib` directory. Nodemon typically runs the `node` binary. We tell Nodemon to use the `babel-node` binary instead. This way it will understand all the ES6/Flow code.
+In `dev:start`, the `--ignore lib` indicates to *not* restart the server when changes happen in the `lib` directory. Nodemon typically runs the `node` binary. We tell Nodemon to use the `babel-node` binary instead. This way it will understand all the ES6 code.
 
 * **Run:** `yarn start` and open `localhost:8000`.
 
 Go ahead and **change** the `APP_NAME` constant in `src/shared/config.js`, which triggers a restart of your server in the terminal. Refresh the page to see the updated title.
-
 
 
 ## PM2
@@ -200,9 +183,11 @@ One last thing: We are going to pass a `NODE_ENV` environment variable to our PM
 
 * **Run:** `yarn prod:build`, then run `yarn prod:start`.
 
-PM2 shows an active process. Go to `http://localhost:8000/` in your browser to see your app. Your terminal should show the logs, which should be "Server running on port 8000 (production).". Note that with PM2, your processes are run in the background. If you press Ctrl+C, it will kill the `pm2 logs` command, which was the last command of our `prod:start` chain. If you want to stop the server, run `yarn prod:stop`
+PM2 shows an active process. Go to `http://localhost:8000/` in your browser to see your app. Your terminal should show the logs, which should be "Server running on port 8000 (production).". Note that with PM2, your processes are run in the background. If you press Ctrl+C, it will kill the `pm2 logs` command, which was the last command of our `prod:start` chain. If you want to stop the server, run `yarn prod:stop`.
 
-To ensure that`prod:build` works fine before commiting code to the repository, add it to the `precommit` task in your `package.json`.
+When you get an error, that the address is already in use, it is usually because you have forgotten to stop the pm2 server. So just run `yarn prod:stop` and it should be working again.
+
+To ensure that `prod:build` works fine before commiting code to the repository, add it to the `precommit` task in your `package.json`.
 
 ```json
 "precommit": "yarn test && yarn prod:build"

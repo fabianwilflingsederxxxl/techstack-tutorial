@@ -6,7 +6,7 @@ We're now going to use some ES6 syntax, which is a great improvement over the "o
 
 > **[Babel](https://babeljs.io/)** is a compiler that transforms ES6 code (and other things like React's JSX syntax) into ES5 code. It is very modular and can be used in tons of different [environments](https://babeljs.io/docs/setup/). It is by far the preferred ES5 compiler of the React community.
 
-**Move** your `index.js` into a new `src` folder. This is where you will write your ES6 code. **replace** the contents in `index.js` with a simple:
+**Move** your `index.js` into a new `src` folder. This is where you will write your ES6 code. **Replace** the contents in `index.js` with a simple:
 
 ```js
 const str = 'ES6';
@@ -37,7 +37,7 @@ Running `yarn start` now, it will print the correct output, but Babel is not act
 }
 ```
 
-`yarn start` will still work, but it's actually being executed now. We can't really tell if it is though, since we're using `babel-node` to interpret ES6 code on the fly. You'll soon have a proof that your ES6 code is actually transformed when you reach the [ES6 modules syntax](#the-es6-modules-syntax) section of this chapter.
+`yarn start` will still work, but it's actually being executed now. We can't really tell if it is though, since we're using `babel-node` to interpret ES6 code on the fly. You'll soon have a proof that your ES6 code is actually transformed when you reach the ES6 modules syntax section of this chapter.
 
 ## ES6
 
@@ -63,7 +63,7 @@ module.exports = Sessel;
 
 It should not look surprising to you if you've done OOP in the past in any language. It's relatively recent for JavaScript though. The class is exposed to the outside world via the `module.exports` assignment.
 
-**Update** your `src/index.js` to:
+ **Replace** the contents of your `src/index.js` to:
 
 ```js
 const Sessel = require('./Sessel');
@@ -83,7 +83,7 @@ As you can see, unlike the community-made package `color` that we used before, w
 
 Here we simply replace `const Sessel = require('./Sessel');` by `import Sessel from './Sessel';`, which is the newer ES6 modules syntax (as opposed to "CommonJS" modules syntax). It is currently not natively supported by NodeJS, but Babel processes those ES6 files correctly.
 
-In `Sessel.js`, we also replace `module.exports = Sessel` by `export default Sessel`
+In `Sessel.js`, we also replace `module.exports = Sessel;` by `export default Sessel;`
 
 * **Run:** `yarn start`
 
@@ -124,7 +124,7 @@ We will use this standard `test` task to run a chain of all the commands that va
 
 * **Run** `yarn test`
 
-You'll see a whole bunch of errors for missing semicolons, and a warning for using `console.log()` in `index.js`.
+You'll see a couple of lines that say `can't resolve reference #/definitions/basicConfig from id #` (you can [ignore this](https://github.com/airbnb/javascript/issues/1488)), and a warning for using `console.log()` in `index.js`.
 
 Add `/* eslint-disable no-console */` at the top of our `index.js` file to allow the use of `console` in this file.
 
@@ -168,7 +168,9 @@ This chapter set you up with ESLint in the terminal, which is great for catching
 
 We will use a **[prettier-eslint](https://github.com/prettier/prettier-eslint)**, that runs eslint --fix after prettier to enforce our eslint ruleset as well. But first we need to install prettier-eslint.
 
-> We want **VS Code** to format our code using Prettier after saving a file.
+* **Run** `yarn add --dev prettier-eslint`
+
+> We want **VS Code** to format our code using Prettier after saving a file. First press `CMD + Shift + P` and select `Install Extension`. Install the ESlint and Prettier Extension for IDE support.
 > Press `CMD + ,` if you’re on a Mac - to open the VS Code Workspace Settings - then add the following:
 ```javascript
 {
@@ -182,19 +184,17 @@ We will use a **[prettier-eslint](https://github.com/prettier/prettier-eslint)**
 ```
 > You need to reload to see the extensions in action. For other Texteditors the setup will vary
 
-* **Run** `yarn add --dev prettier-eslint`
-
 ## Git Hooks with Husky
 
 > **[Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)**: Scripts that are run when certain actions like a commit or a push occur.
 
-Okay so we now have this neat `test` task that tells us if our code looks good or not. We're going to set up Git Hooks to automatically run this task before every `git commit` and `git push`, which will prevent us from pushing bad code to the repository if it doesn't pass the `test` task.
+Okay so we now have this neat `test` task that tells us if our code looks good or not. We're going to set up Git Hooks to automatically run this task before every `git commit`, which will prevent us from pushing bad code to the repository if it doesn't pass the `test` task.
 
 [Husky](https://github.com/typicode/husky) is a package that makes this very easy to set up Git Hooks.
 
 * **Run** `yarn add --dev husky`
 
-All we have to do is to create two new tasks in `scripts` and `precommit`:
+All we have to do is to create a new tasks in `scripts` and `precommit`:
 
 ```json
 "scripts": {

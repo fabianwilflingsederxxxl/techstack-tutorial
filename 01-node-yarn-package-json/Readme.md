@@ -50,16 +50,15 @@ For Windows download the executable from https://yarnpkg.com/latest.msi and run 
 > 💡 **[package.json](https://yarnpkg.com/en/docs/package-json)** is the file used to describe and configure your JavaScript project. It contains general information (your project name, version, contributors, license, etc), configuration options for tools you use, and even a section to run *tasks*.
 
 
-- Create a new folder to work in, and `cd` into the folder.
+- Create a new folder to work in, and `cd` into the folder. (type in `mkdir xxxlutztutorial && cd xxxlutztutorial`)
 - Run `yarn init` and answer the questions (`yarn init -y` to skip all questions), to generate a `package.json` file automatically.
 
-This is how the basic `package.json` file looks like:
+Open the `package.json` and **remove** the line `"main": "index.js",`, the main entrypoint is only relevant when you want to `require('xxxlutztutorial')` your package and it would not make sense to require this tutorial in another repository. You have now your initial config ready:
 
 ```json
 {
-  "name": "your-project",
+  "name": "xxxlutztutorial",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT"
 }
 ```
@@ -75,7 +74,7 @@ This is how the basic `package.json` file looks like:
 
 ## `start` script
 
-Running `node .` to execute our program is a bit too low-level. We are going to use an NPM/Yarn script to trigger the execution of that code instead.
+Running `node .` to execute our program is a bit too low-level. We are going to use an Yarn script to trigger the execution of that code instead.
 
 This lets use  `yarn start`, even when our program gets more complicated.
 
@@ -83,9 +82,8 @@ In `package.json`, **add** a `scripts` section:
 
 ```json
 {
-  "name": "xxxldigital-Developer-Platform",
+  "name": "xxxlutztutorial",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "start": "node ."
@@ -103,20 +101,7 @@ In `package.json`, **add** a `scripts` section:
 
 ## Git and `.gitignore`
 
-Initialize a Git repository with `git init`
-
-<br>
-
-After completing a page successfully
-**run** `git add .`
-and then
-`git commit -m="[Page]"`
-
-replace `[Page]` with the currently completed page
-
-<br>
-
-At the end of every page, we'll remind you to commit your changes.
+Initialize a Git repository with `git init`, at the end of every page, we'll remind you to commit your changes. If you want to know more about git read [this article](http://rogerdudler.github.io/git-guide/).
 
 - **Create** a `.gitignore` file and add the following to it:
 
@@ -133,7 +118,7 @@ At the end of every page, we'll remind you to commit your changes.
 
 In this section we will install and use a package. A "package" is simply a piece of code that someone else wrote, and that you can use in your own code. It can be anything. Here, we're going to try a package that helps you manipulate colors for instance.
 
-- Install the community-made package called `color` by running `yarn add color`
+- Install the community-made package called `color` by running `yarn add color`.
 
 Open `package.json` to see how Yarn automatically added `color` in  `dependencies`.
 
@@ -170,6 +155,13 @@ There are two kinds of package dependencies, `"dependencies"` and `"devDependenc
 **Dependencies** are libraries you need for your application to function (React, Redux, Lodash, jQuery, etc). You install them with `yarn add [package]`.
 
 **Dev Dependencies** are libraries used during development or to build your application (Webpack, SASS, linters, testing frameworks, etc). You install those with `yarn add --dev [package]`.
+
+You have the first files ready to put into your local repository.
+
+**run** `git add .`
+to add the files and then
+`git commit -m="Page 1"`
+to commit them to the repo.
 
 Next section: [02 - Babel, ES6, ESLint and Husky](https://github.com/XXXLutz/techstack-tutorial/blob/master/02-babel-es6-eslint-husky/Readme.md)
 

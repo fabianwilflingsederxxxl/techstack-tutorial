@@ -1,16 +1,17 @@
 {
-  "name": "xxxldigital-Developer-Platform",
+  "name": "xxxlutztutorial",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "start": "babel-node src",
     "test": "eslint src --fix",
     "precommit": "yarn test"
   },
-  "dependencies": {},
+  "browserslist": [
+    "> 1%"
+  ],
   "devDependencies": {
-    "babel-cli": "^6.24.1",
+    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "eslint": "4.3.0",
     "eslint-config-airbnb": "^15.1.0",
@@ -19,9 +20,6 @@
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.1.0",
     "husky": "^0.14.3",
-    "prettier-eslint": "^6.4.2"
-  },
-  "browserslist": [
-    "> 1%"
-  ]
+    "prettier-eslint": "^8.2.0"
+  }
 }

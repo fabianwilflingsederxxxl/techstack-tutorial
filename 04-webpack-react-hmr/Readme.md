@@ -17,6 +17,8 @@ export const APP_CONTAINER_CLASS = 'js-app';
 export const APP_CONTAINER_SELECTOR = `.${APP_CONTAINER_CLASS}`;
 ```
 
+**Note:** If you have an error you replaced the contents of config.js, you should append them.
+
 **Create** an `src/client/index.js` file containing:
 
 ```js
@@ -27,14 +29,13 @@ import { APP_CONTAINER_SELECTOR } from '../shared/config';
 document.querySelector(APP_CONTAINER_SELECTOR).innerHTML = '<h1>Hello Webpack!</h1>';
 ```
 
-
 If you want to use some of the most recent ES features in your client code,  you need to include the [Babel Polyfill](https://babeljs.io/docs/usage/polyfill/) before anything else in your bundle.
 
 * **Run:** `yarn add babel-polyfill`
 
 If you run ESLint on this file, it will complain about `document` being undefined.
 
-**Add** the following to `env` in your `.eslintrc.json` to allow the use of `window` and `document`:
+**Add** the following `env` in your `.eslintrc.json` to allow the use of `window` and `document`:
 
 ```json
 "env": {
@@ -49,22 +50,17 @@ Alright, we now need to bundle this ES6 client app into an ES5 bundle.
 ```js
 import path from 'path';
 
-import { WDS_PORT } from './src/shared/config';
-import { isProd } from './src/shared/util';
+import { WDS_PORT, isProd } from './src/shared/config';
 
 export default {
-  entry: [
-    './src/client',
-  ],
+  entry: ['./src/client'],
   output: {
     filename: 'js/bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: isProd ? '/static/' : `http://localhost:${WDS_PORT}/dist/`,
   },
   module: {
-    rules: [
-      { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
-    ],
+    rules: [{ test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ }],
   },
   devtool: isProd ? false : 'source-map',
   resolve: {
@@ -119,8 +115,7 @@ We created a separate `lint` task and added `webpack.config.babel.js` to the fil
 Next, let's **create** the container for our app in `src/server/render-app.js`, and include the bundle that will be generated:
 
 ```jsx
-import { APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT } from '../shared/config';
-import { isProd } from '../shared/util';
+import { APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT, isProd } from '../shared/config';
 
 const renderApp = title =>
   `<!doctype html>
@@ -213,16 +208,16 @@ Since we use the JSX syntax here, we have to tell Babel that it needs to transfo
 }
 ```
 
-By default the Airbnb ESLint preset we are using prefers functional React components. Since we want to use class based components, we have to edit the `,eslintrc.json` file like so:
+By default the Airbnb ESLint preset we are using prefers functional React components. Since we want to use class based components, we have to edit the `.eslintrc.json` file like so:
 
-```diff
+```json
    "rules": {
--    "compat/compat": 2
-+    "compat/compat": 2,
-+    "react/prefer-stateless-function": 0
+    "compat/compat": 2,
+    "react/prefer-stateless-function": 0
    },
    "env": {
      "browser": true
+   }
 ```
 
 * **Run:** `yarn start` and `yarn dev:wds` and hit `http://localhost:8000`. You should see "Hello React!".
@@ -275,10 +270,11 @@ import { APP_CONTAINER_SELECTOR } from '../shared/config';
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR);
 
-const wrapApp = AppComponent =>
-  (<AppContainer>
+const wrapApp = AppComponent => (
+  <AppContainer>
     <AppComponent />
-  </AppContainer>);
+  </AppContainer>
+);
 
 ReactDOM.render(wrapApp(App), rootEl);
 
@@ -298,7 +294,9 @@ To make this  process clean and DRY, we create a little `wrapApp` function that 
 
 ---
 
-Congratulations, you completed Page 4!
+Congratulations, you completed Page 4! It is important that you understand that webpack compiles all the javascript files to one file and uses babel via the babel-loader to 'understand' ES6 syntax. Babel itself makes sure, that the NodeJS server understands modern javascript and react, it only triggers on the requests (in this case the initial load).
+
+In production babel and webpack only compile the application and are not used anymore when users hit the server.
 
 Dont forget to:
 

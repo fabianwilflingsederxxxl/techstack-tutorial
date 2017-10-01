@@ -9,11 +9,11 @@
 
 This is a tutorial guide to assemble the Javascript Stack of the internal Developer Platform. It requires general Development understanding with little bit Javascript Knowledge. The idea and Format of this tutorial was influenced by the great verekia, check out [his stack here](https://github.com/verekia/js-stack-from-scratch).
 
-The goal of this tutorial is a quick onboarding of the internal team to understand the concepts of component based architecture and a javascript stack that relys heavily on ReactJS and Frameworks close to them.
+The goal of this tutorial is a quick onboarding of the internal team to understand the concepts of component based architecture and a Javascript stack that relies heavily on ReactJS and Frameworks close to them.
 
-This stack uses mainly libraries, that had an unexpensive last version update and therefor displays a more conservative approach in the techstack setup. In the finished platform we use Redux and Flow for state and type handling, we might add the functionality to this tutorial at some later point.
+This stack uses mainly libraries, that had an inexpensive last version update and therefor displays a more conservative approach in the techstack setup. In the finished platform we use Redux and Flow for state and type handling, we might add the functionality to this tutorial at some later point.
 
-This tutorial won't use use a pre-made configuration, we do deep dives in every technology to make sure everybody knows whats happening. For quick boilerplates rather use the [create-react-app](https://github.com/facebookincubator/create-react-app).
+This tutorial won't use a pre-made configuration, we do deep dives in every technology to make sure everybody knows what is happening. For quick boilerplates rather use the [create-react-app](https://github.com/facebookincubator/create-react-app).
 
 In every chapter you find the code on that particular point and you can run the, with `yarn && yarn start`.
 
