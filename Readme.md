@@ -1,11 +1,10 @@
 # XXXLutz Developer Platform Setup
 
-[![React](https://i.imgur.com/y4TjpNt.png)](https://facebook.github.io/react/)
-[![React Router](/img/react-router-padded-90.png)](https://github.com/ReactTraining/react-router)
-[![ESLint](/img/eslint-padded-90.png)](http://eslint.org/)
-[![Jest](/img/jest-padded-90.png)](https://facebook.github.io/jest/)
-[![Yarn](/img/yarn-padded-90.png)](https://yarnpkg.com/)
-[![Webpack](/img/webpack-padded-90.png)](https://webpack.github.io/)
+[![React](https://i.imgur.com/cBSDMbz.png)](https://facebook.github.io/react/)
+[![React Router](https://i.imgur.com/TyzZFsW.png)](https://github.com/ReactTraining/react-router)
+[![ESLint](https://i.imgur.com/BIA60uF.png)](http://eslint.org/)
+[![Yarn](https://i.imgur.com/cShYnsa.png)](https://yarnpkg.com/)
+[![Webpack](https://i.imgur.com/y4TjpNt.png)](https://webpack.github.io/)
 
 This is a tutorial guide to assemble the Javascript Stack of the internal Developer Platform. It requires general Development understanding with little bit Javascript Knowledge. The idea and Format of this tutorial was influenced by the great verekia, check out [his stack here](https://github.com/verekia/js-stack-from-scratch).
 
