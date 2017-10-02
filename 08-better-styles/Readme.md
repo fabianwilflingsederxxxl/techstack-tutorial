@@ -17,7 +17,7 @@ There are a few things about our App that reduce the reusability of our code.
 ## Preview
 Here's a quick preview of what the site will look after finishing this chapter
 
-![](https://i.imgur.com/h4oVMZZ.png)
+![](https://i.imgur.com/dc0V0Ln.png)
 
 ## CI Font
 

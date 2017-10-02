@@ -1,11 +1,11 @@
 import 'isomorphic-fetch';
-import Helmet from 'react-helmet';
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
+
+import { firstEndpointRoute } from 'shared/routes';
 
 import Button from 'shared/components/Button';
 import Header from 'shared/components/Header';
-
-import { firstEndpointRoute } from 'shared/routes';
 
 import main from '../../styles/main.scss';
 
@@ -41,24 +41,26 @@ class Home extends Component {
     console.log('Async Button clicked');
 
     // we pipe the promise
-    return fetch(firstEndpointRoute(123), {
-      method: 'GET',
-    })
-      // when a response came back, give a json to the next step
-      .then((res) => {
-        if (!res.ok) throw Error(res.statusText);
-        return res.json();
+    return (
+      fetch(firstEndpointRoute(123), {
+        method: 'GET',
       })
-      // check if this json (now js object) has a parameter serverMessage
-      .then((data) => {
-        if (!data.serverMessage) {
-          throw Error('No message received');
-        }
-        // and set the state with that message
-        this.setState({
-          buttonTextAsync: data.serverMessage,
-        });
-      });
+        // when a response came back, give a json to the next step
+        .then((res) => {
+          if (!res.ok) throw Error(res.statusText);
+          return res.json();
+        })
+        // check if this json (now js object) has a parameter serverMessage
+        .then((data) => {
+          if (!data.serverMessage) {
+            throw Error('No message received');
+          }
+          // and set the state with that message
+          this.setState({
+            buttonTextAsync: data.serverMessage,
+          });
+        })
+    );
   }
   render() {
     return (

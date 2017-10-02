@@ -1,4 +1,4 @@
-@import '~shared/styles/variables';
+@import "~shared/styles/variables";
 
 .navigation {
   background-color: #fff;
@@ -9,9 +9,6 @@
 }
 
 .navigationLogo {
-  font-weight: 300;
-  font-size: 25px;
-  color: $brand-primary;
   margin: auto;
   margin-top: 20px;
 }

@@ -1,33 +1,49 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Header from 'shared/components/Header';
 
 import main from '../../styles/main.scss';
 
-import Tutorial from './components/Tutorial';
+import { readDocument, markupDocument } from '../helpers';
 
 class Tutorials extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      title: 'Tutorials',
+      text: '',
+      html: '',
+      filename: this.props.match.params.docname,
+    };
+  }
+
+  componentDidMount() {
+    readDocument(this.props.match.params.docname)
+      .then(markupDocument)
+      .then(result => this.setState(result));
+  }
+
   render() {
     return (
       <div>
         <Helmet
-          title={'Tutorials'}
-          meta={[{ name: 'description', content: 'Tutorial Page description' }]}
+          title={this.state.title}
+          meta={[
+            { name: 'description', content: 'A page to 1say hello' },
+            { property: 'og:title', content: this.state.title },
+          ]}
         />
-        <Header text="Tutorials" />
         <div className={main.container}>
-          <div className={main.row}>
-            <Tutorial docname="lorem" title="Lorem ipsum dolor sit amet">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-              accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet.
-            </Tutorial>
-          </div>
+          <article dangerouslySetInnerHTML={{ __html: this.state.html }} />
         </div>
       </div>
     );
   }
 }
+
+Tutorials.propTypes = {
+  match: PropTypes.shape({ params: PropTypes.shape({ docname: PropTypes.string }) }).isRequired,
+};
 
 export default Tutorials;

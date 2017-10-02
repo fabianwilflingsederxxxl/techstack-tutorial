@@ -1,38 +1,15 @@
-@import '~shared/styles/variables';
+@import "~shared/styles/variables";
 
 .button {
-  border: none;
-  margin: 20px 20px;
-  padding: 21px 40px;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  border: 3px solid transparent;
-  border-image: linear-gradient(
-    to bottom right,
-    $brand-secondary 0,
-    $brand-primary 100%
-  );
-  border-image-slice: 1;
-  transition: all .2s ease;
+  border: 2px solid $brand-primary;
+  background: white;
+  margin: 20px;
+  padding: 13px 25px;
+  color: $brand-primary;
+
   &:hover {
-    transition: all .2s ease;
-    background: transparent;
-    color: $brand-primary;
+    background: $brand-primary;
+    color: white;
+    transition: all 100ms ease-in-out;
   }
-}
-
-.jumbo {
-  font-size: 18px;
-  line-height: 20px;
-  padding: 21px 40px;
-}
-
-.nectar {
-  background: $brand-secondary;
-  background: linear-gradient(
-    to bottom right,
-    $brand-secondary,
-    $brand-primary
-  );
 }
