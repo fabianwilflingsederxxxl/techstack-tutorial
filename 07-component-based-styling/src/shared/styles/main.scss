@@ -1,4 +1,4 @@
-@import 'variables';
+@import "variables";
 
 html,
 body {
@@ -9,22 +9,6 @@ body {
   font-family: Verdana;
 }
 
-html {
-  background-image: url("http://xxxl.digital/wp-content/uploads/2016/10/PA123434.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-body {
-  background: $brand-primary;
-  background-color: linear-gradient(
-    to bottom,
-    $brand-primary 0%,
-    $brand-secondary 100%
-  );
-  opacity: 0.95;
-}
-
 a {
-  color: white;
+  color: $brand-primary;
 }
