@@ -14,7 +14,9 @@ export default (app) => {
   });
 
   app.get(firstEndpointRoute(), (req, res) => {
-    res.json(tutorialsPage(req.params.num));
+    res.json({
+      serverMessage: `Hello from the server! (received ${req.params.num})`,
+    });
   });
 
   app.use('/repo', githubRepoProxy);

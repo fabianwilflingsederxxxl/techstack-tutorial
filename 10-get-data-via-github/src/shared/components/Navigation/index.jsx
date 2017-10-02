@@ -18,7 +18,7 @@ class Navigation extends Component {
         <ul className={styles.navigationList}>
           {[
             { route: HOME_PAGE_ROUTE, label: 'Home' },
-            { route: tutorialsRoute('lorem'), label: 'Tutorials' },
+            { route: tutorialsRoute('Readme.md'), label: 'Tutorials' },
             { route: NOT_FOUND_DEMO_PAGE_ROUTE, label: '404 Demo' },
           ].map(link => (
             <li key={link.route} className={styles.navigationListitem}>

@@ -154,7 +154,7 @@ export const tutorialsPage = (docname) => {
 };
 ```
 
-**Modify** `src/server/routing.js` to edit the ExpressJS endpoint for the article page. Remove the old TUTORIALS_PAGE_ROUTE and change it to the function.
+**Modify** `src/server/routing.js` to edit the ExpressJS endpoint for the article page. Remove the old TUTORIALS_PAGE_ROUTE and change it to the function. Because the function is now doing something different, we change our first Endpoint route to the function that sends back the request to the Button. This could also stay in the controller but it is small enough to put it in the routing.js.
 
 ```jsx
 import {
@@ -167,6 +167,12 @@ import {
 
   app.get(tutorialsRoute(), (req, res) => {
     res.send(renderApp(req.url, tutorialsPage()));
+  });
+
+  app.get(firstEndpointRoute(), (req, res) => {
+    res.json({
+      serverMessage: `Hello from the server! (received ${req.params.num})`,
+    });
   });
 
 // [...]

@@ -1,6 +1,6 @@
 # XXXLutz Developer Platform Setup
 
-[![React](/img/react-padded-90.png)](https://facebook.github.io/react/)
+[![React](https://i.imgur.com/y4TjpNt.png)](https://facebook.github.io/react/)
 [![React Router](/img/react-router-padded-90.png)](https://github.com/ReactTraining/react-router)
 [![ESLint](/img/eslint-padded-90.png)](http://eslint.org/)
 [![Jest](/img/jest-padded-90.png)](https://facebook.github.io/jest/)
