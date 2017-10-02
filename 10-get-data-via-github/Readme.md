@@ -102,9 +102,10 @@ Now do some changes on the Tutorial pages `componentDidMount` function:
 To have the Linking right we also Change the 'lorem' route in `src/shared/components/Navigation/index.jsx` to Readme.md:
 
 ```jsx
-
+//[...]
+{ route: tutorialsRoute('Readme.md'), label: 'Tutorials' },
+//[...]
 ```
-
 
 If we request the tutorials page root path we request the first Readme page, otherwise do normal linking! The linking on that github content is done via < a > Links so we always request the page fully, but you now have the full Tutorial you just played through right on your platform.
 
