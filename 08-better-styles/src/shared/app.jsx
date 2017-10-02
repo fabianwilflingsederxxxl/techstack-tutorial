@@ -1,16 +1,17 @@
-import Helmet from 'react-helmet';
 import React, { Component } from 'react';
 import { Switch } from 'react-router';
 import { Route } from 'react-router-dom';
+import Helmet from 'react-helmet';
 
 import { APP_NAME } from 'shared/config';
 import Nav from 'shared/components/Navigation';
-import Footer from 'shared/components/Footer';
 
 // Pages
 import Home from 'shared/pages/Home';
 import Tutorials from 'shared/pages/Tutorials';
 import NotFoundPage from 'shared/pages/error/NotFound';
+
+import Footer from 'shared/components/Footer';
 
 // Routes
 import { HOME_PAGE_ROUTE, TUTORIALS_PAGE_ROUTE } from 'shared/routes';

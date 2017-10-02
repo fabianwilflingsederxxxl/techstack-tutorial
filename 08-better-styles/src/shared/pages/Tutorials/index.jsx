@@ -1,6 +1,5 @@
-import Helmet from 'react-helmet';
 import React, { Component } from 'react';
-
+import Helmet from 'react-helmet';
 import Header from 'shared/components/Header';
 
 import main from '../../styles/main.scss';

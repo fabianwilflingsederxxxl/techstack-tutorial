@@ -6,11 +6,7 @@ class Header extends Component {
   render() {
     return (
       <div className={styles.header}>
-        <h1 className={styles.heading}>
-          {this.props.text}
-        </h1>
-        <div className={styles.background} />
-        <div className={styles.backgroundLayer} />
+        <h1 className={styles.heading}>{this.props.text}</h1>
       </div>
     );
   }

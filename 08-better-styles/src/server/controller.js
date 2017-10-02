@@ -1,9 +1,4 @@
-export const homePage = () => null;
-
-export const helloPage = () => ({
-  hello: { message: 'Server-side preloaded message' },
-});
-
+// eslint-disable-next-line import/prefer-default-export
 export const tutorialsPage = num => ({
   serverMessage: `Hello from the server! (received ${num})`,
 });

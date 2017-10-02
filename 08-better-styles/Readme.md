@@ -1,16 +1,15 @@
 # 08 - Better Styles
 
-Alright! It's time to give our ugly app a facelift.
+Alright! It's time to give our app a facelift.
 
-There are a few things about our App that make it ugly and reduce the reusability of our code.
+There are a few things about our App that reduce the reusability of our code.
 
-
-1. No CI Font - currently we're using "Verdana". We'll switch this out to match the Corporate Design Font "Roboto" of xxxl.digital
+1. No CI Font - currently we're using "Verdana". We'll switch this out to match the Corporate Font "Arial" of xxxlutz.at
 2. Content Styling
 3. No Container Element - right now all Texts Elements such as the "p" tag in our `NotFound` component don't have a parent Element that allows them to be centered inside of a container.
 4. Viewport Meta tag for responsive layouts
 5. Header Component - Currently there's we only use the H1 Tag in the Homepage Component, missing a key Element for SEO (Search Engine Optimization) and a big part in getting users attention. For this we'll be using a custom Header component
-6. Navigation - it's ugly and not usable on mobile screens
+6. Navigation - it is not styled and not usable on mobile screens
 7. Footer
 8. Button Styling
 
@@ -24,15 +23,8 @@ Here's a quick preview of what the site will look after finishing this chapter
 
 The change needed to include the CI font is minor, just add a link tag to load the "Roboto" font from Google webfonts.
 
+**Edit** `src/style/main.scss` and change to Font to Arial. For the Header Arial Black will be used, we will do that in the Component.
 
-**Edit** `src/server/render-app.jsx` in the render function like so:
-
-```jsx
-// [...]
-      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
-    </head>
-// [...]
-```
 
 ## Content Styling & Container Element
 
@@ -50,14 +42,6 @@ This allows us to use media queries and responsive design in general
 
 We're now adding the font-family in our css and create a container and row class that can get used by our react components.
 
-**Replace** content of `shared/styles/_variables.scss`
-```sass
-$brand-primary: #ea003e;
-$brand-secondary: #a8106b;
-$brand-accent: #e20015;
-$brand-highlight: #ec008c;
-```
-
 **Replace** content of `shared/styles/main.scss`
 
 ```sass
@@ -70,16 +54,7 @@ body {
   margin: 0px;
   color: #252525;
   padding: 0px;
-  font-family: 'Roboto', Helvetica, Arial;
-}
-
-h2 {
-  text-align: center;
-  letter-spacing: -0.5px;
-  font-weight: 300;
-  font-size: 30px;
-  margin-top: 50px;
-  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -111,11 +86,7 @@ class Header extends Component {
   render() {
     return (
       <div className={styles.header}>
-        <h1 className={styles.heading}>
-          {this.props.text}
-        </h1>
-        <div className={styles.background} />
-        <div className={styles.backgroundLayer} />
+        <h1 className={styles.heading}>{this.props.text}</h1>
       </div>
     );
   }
@@ -125,7 +96,6 @@ Header.propTypes = {
 };
 
 export default Header;
-
 ```
 In this part we'll use flexbox to vertically center the "heading" div of the `Header` component
 
@@ -134,47 +104,23 @@ In this part we'll use flexbox to vertically center the "heading" div of the `He
 **Create** `shared/components/Header/style.scss`
 
 ```sass
-@import '~shared/styles/variables';
+@import "~shared/styles/variables";
 .header {
-  height: 210px;
-
+  height: 140px;
   display: flex;
   /* center items along the cross axis - vertically in our case */
   align-items: center;
   position: relative;
+  background: $brand-primary;
 }
 
 .heading {
   width: 100%;
   z-index: 99;
   font-weight: normal;
-  color: #fff;
+  color: white;
   text-align: center;
-}
-
-.background {
-  background-image: url("http://xxxl.digital/wp-content/uploads/2016/10/PA123434.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 2;
-  bottom: 0;
-}
-
-.backgroundLayer {
-  background: #ea003e;
-  background: linear-gradient(to bottom, #ea003e 0%, #a8106b 100%);
-  opacity: 0.85;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 98;
-  bottom: 0;
-  left: 0;
+  font-family: "Arial Black";
 }
 ```
 
@@ -249,7 +195,7 @@ import main from '../../styles/main.scss';
     return (
       <div>
         <Helmet title={'Home'} meta={[{ name: 'description', content: 'Home Page description' }]} />
-        <Header text="Home"></Header>
+        <Header text="Home" />
         <div className={main.container}>
           <div className={main.row}>
             <Button text={this.state.buttonText} onButtonClick={this.clickHandler} />
@@ -264,7 +210,7 @@ import main from '../../styles/main.scss';
 
 ## Navigation
 
-For our navigation we'll be adding the "xxxl digital" logo,  inlining the links and centering the list aswell as changing the active state color of the active page.
+For our navigation we'll be adding the "xxxlutz" logo, inlining the links and centering the list aswell as changing the active state color of the active page.
 
 
 **Modify** content of `shared/components/Navigation/index.jsx`
@@ -273,11 +219,7 @@ For our navigation we'll be adding the "xxxl digital" logo,  inlining the links 
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import {
-  HOME_PAGE_ROUTE,
-  TUTORIALS_PAGE_ROUTE,
-  NOT_FOUND_DEMO_PAGE_ROUTE,
-} from 'shared/routes';
+import { HOME_PAGE_ROUTE, TUTORIALS_PAGE_ROUTE, NOT_FOUND_DEMO_PAGE_ROUTE } from 'shared/routes';
 
 import styles from './style.scss';
 
@@ -286,15 +228,18 @@ class Navigation extends Component {
     return (
       <nav className={styles.navigation}>
         <div className={styles.navigationLogo}>
-          <strong>xxxl</strong>digital
+          <img
+            src="//www.xxxlutz.at/static/templates/xxxlutz.at/resources/images/logo-2d.png"
+            alt="Logo of xxxlutz"
+          />
         </div>
         <ul className={styles.navigationList}>
           {[
             { route: HOME_PAGE_ROUTE, label: 'Home' },
             { route: TUTORIALS_PAGE_ROUTE, label: 'Tutorials' },
             { route: NOT_FOUND_DEMO_PAGE_ROUTE, label: '404 Demo' },
-          ].map(link =>
-            (<li key={link.route} className={styles.navigationListitem}>
+          ].map(link => (
+            <li key={link.route} className={styles.navigationListitem}>
               <NavLink
                 className={styles.navigationHref}
                 to={link.route}
@@ -303,8 +248,8 @@ class Navigation extends Component {
               >
                 {link.label}
               </NavLink>
-            </li>),
-          )}
+            </li>
+          ))}
         </ul>
       </nav>
     );
@@ -329,9 +274,6 @@ export default Navigation;
 }
 
 .navigationLogo {
-  font-weight: 300;
-  font-size: 25px;
-  color: $brand-primary;
   margin: auto;
   margin-top: 20px;
 }
@@ -361,6 +303,8 @@ export default Navigation;
 }
 ```
 
+**Remove** the "Hello App" text (if it is still there) in `src/shared/app.jsx`;
+
 ## Footer
 
 In our footer we'll display a short copyright notice, with the name of our app and the year
@@ -378,9 +322,7 @@ class Footer extends Component {
     return (
       <div className={main.footer}>
         <div className={styles.footer}>
-          <p>
-            © {APP_NAME} 2017
-          </p>
+          <p>© {APP_NAME} 2017</p>
         </div>
       </div>
     );
@@ -412,7 +354,7 @@ Include the footer on every page:
 
 ## Button Styling
 
-This will add some basic styling to our Button component, that fits into the CI
+This will add some basic styling to our Button component:
 
 **Modify** content of `shared/components/Button/index.js`
 
@@ -422,11 +364,7 @@ import styles from './style.scss';
 class Button extends Component {
   render() {
     return (
-      <button
-        type="button"
-        className={`${styles.button} ${styles.jumbo} ${styles.nectar}`}
-        onClick={this.props.onButtonClick}
-      >
+      <button type="button" className={styles.button} onClick={this.props.onButtonClick}>
         {this.props.text}
       </button>
     );
@@ -438,52 +376,28 @@ class Button extends Component {
 **Create** `shared/components/Button/style.scss`
 
 ```sass
-@import '~shared/styles/variables';
+@import "~shared/styles/variables";
 
 .button {
-  border: none;
-  margin: 20px 20px;
-  padding: 21px 40px;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  border: 3px solid transparent;
-  font-family: 'Roboto', Helvetica, Arial;
+  border: 2px solid $brand-primary;
+  background: white;
+  margin: 20px;
+  padding: 13px 25px;
+  color: $brand-primary;
 
-  border-image: linear-gradient(
-    to bottom right,
-    $brand-highlight 0,
-    $brand-accent 100%
-  );
-  border-image-slice: 1;
-  transition: all .2s ease;
   &:hover {
-    transition: all .2s ease;
-    background: transparent;
-    color: $brand-primary;
+    background: $brand-primary;
+    color: white;
+    transition: all 100ms ease-in-out;
   }
 }
-
-.jumbo {
-  font-size: 18px;
-  line-height: 20px;
-  padding: 21px 40px;
-}
-
-.nectar {
-  background: $brand-secondary;
-  background: linear-gradient(
-    to bottom right,
-    $brand-highlight 0,
-    $brand-accent 100%
-  );
-}
-
 ```
 
 Now the site is ready for action.
 
 * **Visit** localhost:8000
+
+Webpack is not always tracking new files added to the file system, you might have to restart `yarn dev:wds` or just refresh the page!
 
 Congratulations, you completed Page 8!
 
