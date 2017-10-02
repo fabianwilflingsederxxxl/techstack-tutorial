@@ -26,7 +26,7 @@ We have to adjust a whole bunch of imports:
 **Create** a `src/server/routing.js` file containing:
 
 ```jsx
-import { homePage, tutorialsPage } from './controller';
+import { tutorialsPage } from './controller';
 
 import { HOME_PAGE_ROUTE, TUTORIALS_PAGE_ROUTE, firstEndpointRoute } from '../shared/routes';
 
@@ -34,11 +34,11 @@ import renderApp from './render-app';
 
 export default (app) => {
   app.get(HOME_PAGE_ROUTE, (req, res) => {
-    res.send(renderApp(req.url, homePage()));
+    res.send(renderApp(req.url));
   });
 
   app.get(TUTORIALS_PAGE_ROUTE, (req, res) => {
-    res.send(renderApp(req.url, tutorialsPage()));
+    res.send(renderApp(req.url));
   });
 
   app.get(firstEndpointRoute(), (req, res) => {
@@ -69,12 +69,7 @@ This file is where we deal with requests and responses. The calls to business lo
 **Create** a `src/server/controller.js` file containing:
 
 ```jsx
-export const homePage = () => null;
-
-export const helloPage = () => ({
-  hello: { message: 'Server-side preloaded message' },
-});
-
+// eslint-disable-next-line import/prefer-default-export
 export const tutorialsPage = num => ({
   serverMessage: `Hello from the server! (received ${num})`,
 });
@@ -89,8 +84,7 @@ import compression from 'compression';
 import express from 'express';
 
 import routing from './routing';
-import { STATIC_PATH, WEB_PORT } from '../shared/config';
-import { isProd } from '../shared/util';
+import { STATIC_PATH, WEB_PORT, isProd } from '../shared/config';
 
 const app = express();
 
@@ -120,8 +114,7 @@ import ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 
 import App from './../shared/app';
-import { APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT } from '../shared/config';
-import { isProd } from '../shared/util';
+import { APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT, isProd } from '../shared/config';
 
 function renderApp(location, state, routerContext = {}) {
   const appHtml = ReactDOMServer.renderToString(
@@ -217,7 +210,7 @@ class Home extends Component {
     return (
       <div>
         <Helmet title={'Home'} meta={[{ name: 'description', content: 'Home Page description' }]} />
-        <h1>{APP_NAME}</h1>
+        <h1>Home</h1>
       // [...]
 ```
 
@@ -270,9 +263,13 @@ export default NotFoundPage;
 
 The `<Helmet>` component doesn't actually render anything, it just injects content in the `head` of your document and exposes the same data to the server.
 
-Congratulations, you completed Page 6!
+Congratulations, you completed Page 6! SSR is a tough thing and hard to wrap your head around, I like summarize it this way:
 
-Dont forget to:
+- When you request a page it will send you Markup and content back for the browser to render it (like Perl, PHP, Python Flask, Java Applications or just static files do it). So we run (with Babel) Javascript on the NodeJs server behaving like a server side scripting language.
+- To stay responsive as modern web application should be we send with that request a big javascript file (that was bundled by Webpack) with it as well.
+- The javascript file adds all the event listeners and application behaviour to the App (how DOM behaves, what happens when you click a link, etc.) and takes from that point on the logic how the experience for the user should be like, how to load data and in our case makes sure the navigation is working on the client side as well.
+
+Go and get a coffee, and dont forget to:
 
 **Run:** `git add .`
 and then
