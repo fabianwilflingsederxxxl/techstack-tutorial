@@ -1,11 +1,9 @@
 import compression from 'compression';
 import express from 'express';
 
-import { APP_NAME, STATIC_PATH, WEB_PORT } from '../shared/config';
-import { isProd } from '../shared/util';
-import { firstEndpointRoute } from '../shared/routes';
-
+import { APP_NAME, STATIC_PATH, WEB_PORT, isProd } from '../shared/config';
 import renderApp from './render-app';
+import { firstEndpointRoute } from '../shared/routes';
 
 const app = express();
 

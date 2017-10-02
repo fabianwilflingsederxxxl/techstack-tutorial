@@ -6,7 +6,7 @@ In this chapter we are going to create different pages, fill them with first com
 
 Architecture and Folder principles vary a lot in Javascript applications. We will follow the Components Based Architecture as well as the Atomic Design principles.
 
-A Page is a component that is referred by the React Router (will come soon) and usually contains state handling as well as the business logic in that particular page.
+A Page is a component that is referred by the React Router (will come further down) and usually contains state handling as well as the business logic in that particular page.
 
 In this section we will have 3 pages:
 
@@ -71,7 +71,7 @@ is slightly different in React:
 
 ### Component: Custom button
 
-With that in mind we can build a custom button with  handling via properties. The button will contain the text "Hello". A `onClick` event listener can be supplied via the onButtonClick property.
+With that in mind we can build a custom button with handling via properties. The button will contain the text "Hello". A `onClick` event listener can be supplied via the onButtonClick property.
 
 For type checking the props of the buttons properties we will use [PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html).
 
@@ -132,7 +132,7 @@ export default Home;
 
 This button is placed in components, meaning it will be a component that we use more frequently. When a component is only used on one component or page we will put the folder inside the component. But more on that later.
 
-> The render() function of React Components always has to return a single Component, so we wrap the content into a div.
+> The render() function of React Components always has to return a single Component, so we wrap the content into a div. In React 16 this is not necessary but we keep it compatible to React15!
 
 Right now the parent component (Home) only gives the props text to the child (Button). The function, that gets triggered onclick is the default function defined in the Button Component. (Empty function)
 
@@ -318,7 +318,7 @@ class Home extends Component {
 export default Home;
 ```
 
-There are two buttons rendered on the Home Page, the first one behaves as defined, the second Button fetches the data from the server and shows the result. We use the same Component for both functionalities, but the onButtonClick Props Function is now asynchronous.
+There are two buttons rendered on the Home Page, the first one behaves as defined before, the second Button fetches the data from the server and shows the result. We use the same Component for both functionalities, but the onButtonClick Props Function is now asynchronous.
 
 > In the network Tab of your console you see the request to the server Endpoint.
 
@@ -336,12 +336,13 @@ On the client side, we first need to wrap our app inside a `BrowserRouter` compo
 // [...]
 import { BrowserRouter } from 'react-router-dom';
 // [...]
-const wrapApp = AppComponent =>
-  (<BrowserRouter>
+const wrapApp = AppComponent => (
+  <BrowserRouter>
     <AppContainer>
       <AppComponent />
     </AppContainer>
-  </BrowserRouter>);
+  </BrowserRouter>
+);
 ```
 
 ## More Pages
@@ -458,9 +459,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>
-          {APP_NAME}
-        </h1>
+        <h1>{APP_NAME}</h1>
         <Nav />
         <Switch>
           <Route exact path={HOME_PAGE_ROUTE} render={() => <Home />} />
@@ -479,9 +478,9 @@ export default App;
 
 You'll see the URL changing dynamically. Switch between different pages and use the back button of your browser to see that the browsing history is working as expected.
 
-Now, let's say you navigated to `http://localhost:8000/tutorials` this way. Hit the refresh button. You now get a 404, because our Express server only responds to `/`. As you navigated between pages, you were actually only doing it on the client-side. Let's add server-side rendering to the mix to get the expected behavior.
+Now, let's say you navigated to `http://localhost:8000/tutorials` this way. Hit the refresh button. You now get a 404, because our Express server only responds to `/`. As you navigated between pages, you were actually only doing it on the client-side (= in your browser). Let's add server-side rendering to the mix to get the expected behavior.
 
-Congratulations, you completed Page 5!
+Congratulations, you completed Page 5! You created your first components, that are rendering your content and already have some interactions.
 
 Dont forget to:
 

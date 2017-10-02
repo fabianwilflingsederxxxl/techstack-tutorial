@@ -37,24 +37,26 @@ class Home extends Component {
     console.log('Async Button clicked');
 
     // we pipe the promise
-    return fetch(firstEndpointRoute(123), {
-      method: 'GET',
-    })
-      // when a response came back, give a json to the next step
-      .then((res) => {
-        if (!res.ok) throw Error(res.statusText);
-        return res.json();
+    return (
+      fetch(firstEndpointRoute(123), {
+        method: 'GET',
       })
-      // check if this json (now js object) has a parameter serverMessage
-      .then((data) => {
-        if (!data.serverMessage) {
-          throw Error('No message received');
-        }
-        // and set the state with that message
-        this.setState({
-          buttonTextAsync: data.serverMessage,
-        });
-      });
+        // when a response came back, give a json to the next step
+        .then((res) => {
+          if (!res.ok) throw Error(res.statusText);
+          return res.json();
+        })
+        // check if this json (now js object) has a parameter serverMessage
+        .then((data) => {
+          if (!data.serverMessage) {
+            throw Error('No message received');
+          }
+          // and set the state with that message
+          this.setState({
+            buttonTextAsync: data.serverMessage,
+          });
+        })
+    );
   }
   render() {
     return (
