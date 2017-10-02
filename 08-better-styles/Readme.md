@@ -4,14 +4,14 @@ Alright! It's time to give our app a facelift.
 
 There are a few things about our App that reduce the reusability of our code.
 
-1. No CI Font - currently we're using "Verdana". We'll switch this out to match the Corporate Font "Arial" of xxxlutz.at
-2. Content Styling
-3. No Container Element - right now all Texts Elements such as the "p" tag in our `NotFound` component don't have a parent Element that allows them to be centered inside of a container.
-4. Viewport Meta tag for responsive layouts
-5. Header Component - Currently there's we only use the H1 Tag in the Homepage Component, missing a key Element for SEO (Search Engine Optimization) and a big part in getting users attention. For this we'll be using a custom Header component
-6. Navigation - it is not styled and not usable on mobile screens
-7. Footer
-8. Button Styling
+1. [No CI font](#ci-font) - currently, we're using "Verdana". We'll switch this out to match the Corporate Font "Arial" of xxxlutz.at
+2. [Content styling](#content-styling-container-element)
+3. [No container element](#content-styling-container-element) - right now all Texts Elements such as the "p" tag in our `NotFound` component don't have a parent Element that allows them to be centered inside of a container.
+4. [Viewport meta tag](#content-styling-container-element) for responsive layouts
+5. [Header component](#header-component) - currently, we only use the H1 Tag in the Homepage Component, missing a key Element for SEO (Search Engine Optimization) and a big part in getting users attention. For this we'll be using a custom Header component
+6. [Navigation](#navigation) - it is not styled and not usable on mobile screens
+7. [Footer](#footer)
+8. [Button styling](#button-styling)
 
 
 ## Preview
