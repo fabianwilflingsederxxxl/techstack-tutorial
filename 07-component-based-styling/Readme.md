@@ -1,13 +1,13 @@
 # 07 - Component based Styling
 
-We follow th component based architecture approach, so how about styling? We decided to put styling to the component, but in the web we have the following situation:
+We follow the component based architecture approach, so how about styling? We decided to put styling to the component, but in the web we have the following situation:
 
 - **General**: A style should always be defined within a component
 - **Development**: You want to have Hot Module reload, when you change a style of a component
 - **Development**: When the application is rendered on the server, you want to return the style inline.
 - **Production**: You want to return the styles as a seperate Stylesheet that gets loaded independently to the sourcecode and javascript code.
 
-We do it by just adding a style.css file to the component and define the look and feel for that particular component within the file.
+We do it by just adding a `style.css` file to the component and define the look and feel for that particular component within the file.
 
 ## The current state of CSS
 
@@ -214,7 +214,7 @@ Lets try it out:
 }
 ```
 
-Now in `src/shared/components/Button/index.jsx` import the styles and add the class to the Button:
+Now, in `src/shared/components/Button/index.jsx` **import** the styles and **add** the class to the Button:
 
 ```jsx
 //[...]
@@ -250,13 +250,13 @@ You will find a css/styles.css file with following content:
 
 ### Development Settings
 
-In Development we need to tell babel for Server Side Rendering as well, how the loader should handle css files. This behaves exactly the same as on production and therefor the `.babelrc` config works here as well.
+In Development, we need to tell babel for Server Side Rendering as well, how the loader should handle css files. This behaves exactly the same as on production and therefor the `.babelrc` config works here as well.
 
 But we want to have `Hot Module Reload` with `webpack` and dont want to use an external file for our development changes.
 
-To use a different css handling we have to tell `webpack` and explicitly the `babel-loader` first, that it shouldn't use the babel config in webpack.
+To use a different css handling, we have to tell `webpack` and explicitly the `babel-loader` first, that it shouldn't use the babel config in webpack.
 
-And then we need to set a specific css handling for Development, check out the config how we treat those conditions:
+And then we need to **set** a specific css handling for Development, check out the config how we treat those conditions:
 
 ```jsx
 // #2
@@ -399,7 +399,7 @@ module.exports = function processSass(data, filename) {
 };
 ```
 
-and modify the `.babelrc`:
+and **modify** the `.babelrc`:
 
 ```json
 {
@@ -420,7 +420,7 @@ and modify the `.babelrc`:
 
 This looks quite hacky and it actually is. With Babel 7 the configuration can be a js file (.babelrc.js) so we can do the same in one file, till then we do the hacky way in Babel 6.
 
-Now change the filename and the import of the Button Component and the global Stylesheet to .scss.
+Now, change the filename and the import of the Button Component and the global Stylesheet to .scss.
 
 **Create** a new file `src/shared/styles/_variables.scss`:
 
@@ -461,7 +461,7 @@ class App extends Component {
 
 ## Absolute Paths (or 'kind of' Namespacing)
 
-webpack provides an [advanced mechanism to resolve files](https://webpack.js.org/concepts/module-resolution/). The sass-loader uses node-sass' custom importer feature to pass all queries to the webpack resolving engine. Thus you can import your Sass modules from node_modules. Just prepend them with a ~ to tell webpack that this is not a relative import:
+Webpack provides an [advanced mechanism to resolve files](https://webpack.js.org/concepts/module-resolution/). The sass-loader uses node-sass' custom importer feature to pass all queries to the webpack resolving engine. Thus you can import your Sass modules from node_modules. Just prepend them with a ~ to tell webpack that this is not a relative import:
 
 `@import "~bootstrap/dist/css/bootstrap";`
 
@@ -524,7 +524,7 @@ To handle the server side once again we have to align webpack again with babel l
 
 * **Run:** `yarn add --dev babel-plugin-module-resolver`
 
-And modify the `.babelrc` Config:
+And **modify** the `.babelrc` Config:
 ```json
 {
   "presets": ["env", "react"],
@@ -554,7 +554,7 @@ To avoid ES Linting errors add another plugin:
 
 * **Run:** `yarn add --dev eslint-plugin-import eslint-import-resolver-babel-module`
 
-And modify your `.eslintrc.json` file to:
+And **modify** your `.eslintrc.json` file to:
 
 ```json
 {
@@ -594,13 +594,14 @@ That was a tough one, not just for you but for us as well. When you came that fa
 
 Congratulations, you completed Page 7!
 
-Dont forget to:
+Don't forget to:
 
 **Run:** `git add .`
 and then
 `git commit -m="Page 7"`
 
 ---
+
 
 Next section: [08 - Better Styles](https://github.com/XXXLutz/techstack-tutorial/blob/master/08-better-styles/Readme.md)
 

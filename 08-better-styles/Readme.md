@@ -2,7 +2,7 @@
 
 Alright! It's time to give our app a facelift.
 
-There are a few things about our App that reduce the reusability of our code.
+There are a few things about our App that reduce the reusability of our code:
 
 1. [No CI font](#ci-font) - currently, we're using "Verdana". We'll switch this out to match the Corporate Font "Arial" of xxxlutz.at
 2. [Content styling](#content-styling-container-element)
@@ -38,7 +38,7 @@ ${stylesheet}
 // [...]
 ```
 
-This allows us to use media queries and responsive design in general
+This allows us to use media queries and responsive design in general.
 
 We're now adding the font-family in our css and create a container and row class that can get used by our react components.
 
@@ -74,7 +74,7 @@ body {
 
 The header component requires to get a "text" prop of type string passed that will get used for the H1 element of the page.
 
-To make the header a bit prettier we're adding a background image of the team with a colored overlay
+To make the header a bit prettier we're adding a background image of the team with a colored overlay.
 
 **Create** `shared/components/Header/index.jsx`
 ```jsx
@@ -99,7 +99,7 @@ export default Header;
 ```
 In this part we'll use flexbox to vertically center the "heading" div of the `Header` component
 
-> **[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)** Flexbox makes it ease to create align items inside of a container. The idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space, or shrinks them to prevent overflow.
+> **[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)** makes it ease to create align items inside of a container. The idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space, or shrinks them to prevent overflow.
 
 **Create** `shared/components/Header/style.scss`
 
@@ -124,8 +124,7 @@ In this part we'll use flexbox to vertically center the "heading" div of the `He
 }
 ```
 
-Now we're ready to implement the new header and container element
-
+Now we're ready to implement the new header and container element.
 
 **Modify** content of `shared/pages/Tutorials/index.jsx`
 ```jsx
@@ -154,7 +153,6 @@ import main from '../../styles/main.scss';
   }
   // [...]
 ```
-<br>
 
 **Modify** content of `shared/pages/error/NotFound/index.jsx`
 ```jsx
@@ -180,7 +178,7 @@ import main from '../../../styles/main.scss';
   // [...]
 ```
 
-Wrap the buttons in a row and add use the header component.
+Wrap the buttons in a row and add them below the header component.
 
 **Modify** content of `shared/pages/Home/index.jsx`
 ```jsx
@@ -210,11 +208,9 @@ import main from '../../styles/main.scss';
 
 ## Navigation
 
-For our navigation we'll be adding the "xxxlutz" logo, inlining the links and centering the list aswell as changing the active state color of the active page.
-
+For our navigation we'll be adding the "xxxlutz" logo, inlining the links and centering the list as well as changing the active state color of the active page.
 
 **Modify** content of `shared/components/Navigation/index.jsx`
-
 ```jsx
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -260,8 +256,6 @@ export default Navigation;
 ```
 
 **Create** `shared/components/Navigation/style.scss`
-
-
 ```sass
 @import '~shared/styles/variables';
 
@@ -303,14 +297,13 @@ export default Navigation;
 }
 ```
 
-**Remove** the "Hello App" text (if it is still there) in `src/shared/app.jsx`;
+**Remove** the "Hello App" text (if it is still there) in `shared/app.jsx`;
 
 ## Footer
 
-In our footer we'll display a short copyright notice, with the name of our app and the year
+In our footer we'll display a short copyright notice with the name of our app and the year.
 
 **Create** `shared/components/Footer/index.jsx`
-
 ```jsx
 import React, { Component } from 'react';
 import { APP_NAME } from 'shared/config';
@@ -331,8 +324,8 @@ class Footer extends Component {
 
 export default Footer;
 ```
-**Create** `shared/components/Footer/style.scss`
 
+**Create** `shared/components/Footer/style.scss`
 ```css
 .footer {
   text-align: center;
@@ -342,7 +335,6 @@ export default Footer;
 Include the footer on every page:
 
 **Modify** content of `shared/app.jsx`
-
 ```jsx
     // [...]
     import Footer from 'shared/components/Footer';
@@ -357,7 +349,6 @@ Include the footer on every page:
 This will add some basic styling to our Button component:
 
 **Modify** content of `shared/components/Button/index.js`
-
 ```jsx
 import styles from './style.scss';
 
@@ -372,9 +363,8 @@ class Button extends Component {
 }
 ```
 
-**Delete** `shared/components/Button/style.css`
+**Delete** `shared/components/Button/style.css`,
 **Create** `shared/components/Button/style.scss`
-
 ```sass
 @import "~shared/styles/variables";
 
@@ -401,7 +391,7 @@ Webpack is not always tracking new files added to the file system, you might hav
 
 Congratulations, you completed Page 8!
 
-Dont forget to:
+Don't forget to:
 
 **Run:** `git add .`
 and then

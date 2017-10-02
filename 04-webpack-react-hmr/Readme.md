@@ -208,7 +208,7 @@ Since we use the JSX syntax here, we have to tell Babel that it needs to transfo
 }
 ```
 
-By default the Airbnb ESLint preset we are using prefers functional React components. Since we want to use class based components, we have to edit the `.eslintrc.json` file like so:
+By default the Airbnb ESLint preset we are using prefers functional React components. Since we want to use class based components, we have to **modify** the `.eslintrc.json` file like so:
 
 ```json
    "rules": {
@@ -232,7 +232,7 @@ To make HMR work with React, we are going to need to tweak a few things.
 
 * **Run:** `yarn add react-hot-loader@next`
 
-**Edit** your `webpack.config.babel.js` like so:
+**Modify** your `webpack.config.babel.js` like so:
 
 ```js
 import webpack from 'webpack';
@@ -298,11 +298,14 @@ Congratulations, you completed Page 4! It is important that you understand that 
 
 In production babel and webpack only compile the application and are not used anymore when users hit the server.
 
-Dont forget to:
+Don't forget to:
 
-**run** `git add .`
+**Run** `git add .`
 and then
 `git commit -m="Page 4"`
+
+---
+
 
 Next section: [05 - Actions and React Router](https://github.com/XXXLutz/techstack-tutorial/blob/master/05-pages-components-react-router/Readme.md)
 

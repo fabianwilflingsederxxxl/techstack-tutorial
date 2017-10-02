@@ -269,13 +269,14 @@ Congratulations, you completed Page 6! SSR is a tough thing and hard to wrap you
 - To stay responsive as modern web application should be we send with that request a big javascript file (that was bundled by Webpack) with it as well.
 - The javascript file adds all the event listeners and application behaviour to the App (how DOM behaves, what happens when you click a link, etc.) and takes from that point on the logic how the experience for the user should be like, how to load data and in our case makes sure the navigation is working on the client side as well.
 
-Go and get a coffee, and dont forget to:
+Go and get a coffee, and don't forget to:
 
 **Run:** `git add .`
 and then
 `git commit -m="Page 6"`
 
 ---
+
 
 Next section: [07 - Component based Styling](https://github.com/XXXLutz/techstack-tutorial/blob/master/07-component-based-styling/Readme.md)
 
