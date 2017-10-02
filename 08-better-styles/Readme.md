@@ -21,9 +21,9 @@ Here's a quick preview of what the site will look after finishing this chapter
 
 ## CI Font
 
-The change needed to include the CI font is minor, just add a link tag to load the "Roboto" font from Google webfonts.
+The change needed to include the CI font is minor.
 
-**Edit** `src/style/main.scss` and change to Font to Arial. For the Header Arial Black will be used, we will do that in the Component.
+**Edit** `shared/styles/main.scss` and change to Font to Arial. For the Header Arial Black will be used, we will do that in the Component.
 
 
 ## Content Styling & Container Element
