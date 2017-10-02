@@ -1,0 +1,18 @@
+@import "~shared/styles/variables";
+.header {
+  height: 140px;
+  display: flex;
+  /* center items along the cross axis - vertically in our case */
+  align-items: center;
+  position: relative;
+  background: $brand-primary;
+}
+
+.heading {
+  width: 100%;
+  z-index: 99;
+  font-weight: normal;
+  color: white;
+  text-align: center;
+  font-family: "Arial Black";
+}
