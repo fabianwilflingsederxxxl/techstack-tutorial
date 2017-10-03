@@ -8,7 +8,7 @@ The main development interface is **[Google Chrome](https://www.google.de/chrome
 
 ## IDE / Texteditor
 
-This Tutorial is created for the Texteditor **[Visual Code Studio](https://code.visualstudio.com/)**, but the Development would actually work with any Editor. So if you rather prefer Atom, Sublime Text oder Notepad you can use it to.
+This Tutorial is created for the IDE **[Visual Code Studio](https://code.visualstudio.com/)**, but the development would actually work with any editor of your choice. So if you rather prefer Atom, Sublime Text oder Notepad you can use it, too.
 
 In this section we will set up Node, Yarn, a basic `package.json` file, and install a package.
 
@@ -18,14 +18,13 @@ In this section we will set up Node, Yarn, a basic `package.json` file, and inst
 
 We will use Node for basically everything in this tutorial, so you're going to need it. Head to the [download page](https://nodejs.org/en/download/current/) for **macOS** or **Windows** binaries, or the [package manager installations page](https://nodejs.org/en/download/package-manager/) for Linux distributions.
 
-For instance, on **Ubuntu / Debian**, you would run the following commands to install Node:
-
+For instance, on **Ubuntu / Debian**, you would run the following commands to **install** Node:
 ```sh
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-If you already have nodejs installed on your machine, make sure you have a version > 6.5.0 using the command `node -v`
+If you already have nodejs installed on your machine, make sure you have a version > 6.5.0 using the command `node -v`.
 
 On Windows open the NodeJs cmd as a terminal (command line interface - CLI).
 
@@ -37,7 +36,7 @@ NPM is the default package manager for Node. It is automatically installed along
 
 > **[Yarn](https://yarnpkg.com/)** is a Node.js package manager which is much faster than NPM, has offline support, and fetches dependencies [more predictably](https://yarnpkg.com/en/docs/yarn-lock).
 
-Install Yarn by following the [instructions](https://yarnpkg.com/en/docs/install) for your OS.
+**Install** Yarn by following the [instructions](https://yarnpkg.com/en/docs/install) for your OS.
 
 If you are on a macOS or Unix Maching use the **Installation Script** from the *Alternatives* tab , to [avoid](https://github.com/yarnpkg/yarn/issues/1505) relying on other package managers:
 
@@ -50,8 +49,8 @@ For Windows download the executable from https://yarnpkg.com/latest.msi and run 
 > 💡 **[package.json](https://yarnpkg.com/en/docs/package-json)** is the file used to describe and configure your JavaScript project. It contains general information (your project name, version, contributors, license, etc), configuration options for tools you use, and even a section to run *tasks*.
 
 
-- Create a new folder to work in, and `cd` into the folder. (type in `mkdir xxxlutztutorial && cd xxxlutztutorial`)
-- Run `yarn init` and answer the questions (`yarn init -y` to skip all questions), to generate a `package.json` file automatically.
+- **Create** a new folder to work in, and `cd` into the folder. (type in `mkdir xxxlutztutorial && cd xxxlutztutorial`)
+- **Run** `yarn init` and answer the questions (`yarn init -y` to skip all questions), to generate a `package.json` file automatically.
 
 Open the `package.json` and **remove** the line `"main": "index.js",`, the main entrypoint is only relevant when you want to `require('xxxlutztutorial')` your package and it would not make sense to require this tutorial in another repository. You have now your initial config ready:
 
@@ -79,7 +78,6 @@ Running `node .` to execute our program is a bit too low-level. We are going to 
 This lets use  `yarn start`, even when our program gets more complicated.
 
 In `package.json`, **add** a `scripts` section:
-
 ```json
 {
   "name": "xxxlutztutorial",
@@ -101,10 +99,9 @@ In `package.json`, **add** a `scripts` section:
 
 ## Git and `.gitignore`
 
-Initialize a Git repository with `git init`, at the end of every page, we'll remind you to commit your changes. If you want to know more about git read [this article](http://rogerdudler.github.io/git-guide/).
+**Initialize** a Git repository with `git init`, at the end of every page, we'll remind you to commit your changes. If you want to know more about git read [this article](http://rogerdudler.github.io/git-guide/).
 
-- **Create** a `.gitignore` file and add the following to it:
-
+**Create** a `.gitignore` file and add the following to it:
 ```gitignore
 .DS_Store
 /*.log
@@ -118,7 +115,7 @@ Initialize a Git repository with `git init`, at the end of every page, we'll rem
 
 In this section we will install and use a package. A "package" is simply a piece of code that someone else wrote, and that you can use in your own code. It can be anything. Here, we're going to try a package that helps you manipulate colors for instance.
 
-- Install the community-made package called `color` by running `yarn add color`.
+- **Install** the community-made package called `color` by running `yarn add color`.
 
 Open `package.json` to see how Yarn automatically added `color` in  `dependencies`.
 
@@ -129,7 +126,6 @@ A `node_modules` folder has been created to store the package.
 You will also notice that a `yarn.lock` file got generated by Yarn. You should commit this file to your repository, as it will ensure that everyone in your team uses the same version of your packages. If you're sticking to NPM instead of Yarn, the equivalent of this file is the *shrinkwrap*.
 
 **Replace** the content of your `index.js` file:
-
 ```js
 const color = require('color');
 
@@ -158,10 +154,13 @@ There are two kinds of package dependencies, `"dependencies"` and `"devDependenc
 
 You have the first files ready to put into your local repository.
 
-**run** `git add .`
+**Run** `git add .`
 to add the files and then
 `git commit -m="Page 1"`
 to commit them to the repo.
+
+---
+
 
 Next section: [02 - Babel, ES6, ESLint and Husky](https://github.com/XXXLutz/techstack-tutorial/blob/master/02-babel-es6-eslint-husky/Readme.md)
 

@@ -1,6 +1,6 @@
 # 05 - Pages, Components and React Router
 
-In this chapter we are going to create different pages, fill them with first components and make it possible to navigate between them.
+In this chapter, we are going to create different pages, fill them with first components and make it possible to navigate between them.
 
 ## Pages
 
@@ -44,7 +44,7 @@ export default App;
 
 * **Run:** Open 'localhost:8000' and check out the new Page.
 
-In the next section we are going to add a component to our page. But first some general information:
+In the next section, we are going to add a component to our page. But first some general information:
 
 ## Handling Events
 
@@ -482,13 +482,14 @@ Now, let's say you navigated to `http://localhost:8000/tutorials` this way. Hit 
 
 Congratulations, you completed Page 5! You created your first components, that are rendering your content and already have some interactions.
 
-Dont forget to:
+Don't forget to:
 
 **Run:** `git add .`
 and then
 `git commit -m="Page 5"`
 
 ---
+
 
 Next section: [06 - Server-Side Rendering and Helmet](https://github.com/XXXLutz/techstack-tutorial/blob/master/06-ssr-helmet/Readme.md)
 

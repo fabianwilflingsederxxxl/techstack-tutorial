@@ -2,18 +2,17 @@
 
 The next two chapters are optional topics and show how we would approach new features in the stack and add content and functionality in our platform.
 
-In this chapter we are going to implement a simple way to manage articles based on plain markdown files.
+In this chapter, we are going to implement a simple way to manage articles based on plain markdown files.
 
 Download the [placeholder markdown file](https://pastebin.com/raw/K5fjJGkf) and **save** it as `public/documents/lorem.md`.
 
-The public folder is defined in the `src/shared/server/index.js` as a public path and we will use it to store our documents. The styles we dont need in there anymore so **delete** the `css` Folder.
+The public folder is defined in the `src/shared/server/index.js` as a public path and we will use it to store our documents. There are styles we don't need in there any more so **delete** the `css` Folder.
 
-We use the package marked for Mark Down Rendering:
+We use the package `marked` for Mark Down Rendering:
 
 * **Run:** `yarn add marked`
 
-**Edit** the file `src/shared/pages/Tutorials/index.jsx` containing:
-
+**Edit** the file `src/shared/pages/Tutorials/index.jsx` containing
 ```jsx
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -66,8 +65,7 @@ Tutorials.propTypes = {
 export default Tutorials;
 ```
 
-**Create** a file `src/shared/pages/helpers.js` containing the following functions.
-
+**Create** a file `src/shared/pages/helpers.js` containing the following functions
 ```jsx
 import marked from 'marked';
 
@@ -90,8 +88,7 @@ export function readDocument(docname) {
 
 `readDocument` fetches the markdown document containing the requested article from the server.
 
-**Add** to the `src/shared/pages/helpers.js` following render function:
-
+**Add** to the `src/shared/pages/helpers.js` following render function
 ```jsx
 /* Find first heading of lowest depth */
 function findHeading(tokens) {
@@ -128,10 +125,9 @@ export function markupDocument(doc) {
 }
 ```
 
-`markupDocument` compiles the markdown document to html and agregates some metadata. It uses the `findHeading` function to find the title of the markdown document from the tokens produced by `marked.lexer`.
+`markupDocument` compiles the markdown document to html and aggregates some metadata. It uses the `findHeading` function to find the title of the markdown document from the tokens produced by `marked.lexer`.
 
 **Edit** the Tutorials route in `src/shared/routes.js`
-
 ```jsx
 export const HOME_PAGE_ROUTE = '/';
 export const NOT_FOUND_DEMO_PAGE_ROUTE = '/404';
@@ -140,8 +136,7 @@ export const firstEndpointRoute = num => `/ajax/first/${num || ':num'}`;
 export const tutorialsRoute = docname => `/tutorials/${docname || ':docname'}`;
 ```
 
-**Modify** `src/server/controller.js` to change the controller. For now the controller will just verify wether requested document is an allowed filename.
-
+**Modify** `src/server/controller.js` to change the controller. For now the controller will just verify whether the requested document is an allowed filename.
 ```jsx
 // eslint-disable-next-line import/prefer-default-export
 export const tutorialsPage = (docname) => {
@@ -154,8 +149,7 @@ export const tutorialsPage = (docname) => {
 };
 ```
 
-**Modify** `src/server/routing.js` to edit the ExpressJS endpoint for the article page. Remove the old TUTORIALS_PAGE_ROUTE and change it to the function. Because the function is now doing something different, we change our first Endpoint route to the function that sends back the request to the Button. This could also stay in the controller but it is small enough to put it in the routing.js.
-
+**Modify** `src/server/routing.js` to edit the ExpressJS endpoint for the article page. Remove the old TUTORIALS_PAGE_ROUTE and change it to the function. Because the function is now doing something different, we change our first Endpoint route to the function that sends back the request to the Button. This could also stay in the controller but it is small enough to put it in the `routing.js`.
 ```jsx
 import {
   HOME_PAGE_ROUTE,
@@ -178,8 +172,7 @@ import {
 // [...]
 ```
 
-**Modify** `src/shared/app.jsx` to add the article page to the react router.
-
+**Modify** `src/shared/app.jsx` to add the article page to the react router
 ```jsx
 // [...]
 // Routes
@@ -198,8 +191,7 @@ import {
 
 We pass `Tutorials` as a component property to the route instead of passing a render function so that react router can pass us an object containing the request parameters.
 
-In the Navigation we link the lorem Ipsum Article directly, go to `src/shared/components/Navigation/index.jsx` and change it to:
-
+In the Navigation we link the lorem Ipsum Article directly, go to `src/shared/components/Navigation/index.jsx` and **change** it to:
 ```jsx
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -246,7 +238,7 @@ export default Navigation;
 
 The Tutorials page is now fully functional. Start the dev server and **visit** `http://localhost:8000/tutorials/lorem` in your browser.
 
-If you add other markdown files into the `public/documents/` folder, you can view them like this too. Sometimes the Webpack bundling is faster than Nodemon restart, that causes an error because it is trying to load the article before the server is up. This is annoying, but should not influence your dev too much! Now you would start and add SSR to the Tutorials Page, but we keep it lazy loading.
+If you add other markdown files into the `public/documents/` folder, you can view them like this, too. Sometimes the Webpack bundling is faster than Nodemon restart, that causes an error because it is trying to load the article before the server is up. This is annoying, but should not influence your dev too much! Now you would start and add SSR to the Tutorials Page, but we keep it lazy loading.
 
 Congratulations, you completed Page 9!
 
@@ -257,5 +249,9 @@ and then
 `git commit -m="Page 9"`
 
 ---
+
+
+
 Next section: [10 - Get Data via Github](https://github.com/XXXLutz/techstack-tutorial/blob/master/10-get-data-via-github/Readme.md)
+
 Back to the [previous section](https://github.com/XXXLutz/techstack-tutorial/blob/master/08-better-styles/Readme.md) or the [table of contents](https://github.com/XXXLutz/techstack-tutorial/blob/master/Readme.md).

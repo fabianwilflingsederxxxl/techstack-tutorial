@@ -1,13 +1,12 @@
 # 02 - Babel, ES6, ESLint and Husky
 
-We're now going to use some ES6 syntax, which is a great improvement over the "old" ES5 syntax. All browsers and JS environments understand ES5 well, but not ES6. That's where a tool called Babel comes to the rescue!
+We're now going to use some ES6 syntax, which is a great improvement over the "old" ES5 syntax. All browsers and JS environments understand ES5 well, but not ES6. That's where a tool called **Babel** comes to the rescue!
 
 ## Babel
 
 > **[Babel](https://babeljs.io/)** is a compiler that transforms ES6 code (and other things like React's JSX syntax) into ES5 code. It is very modular and can be used in tons of different [environments](https://babeljs.io/docs/setup/). It is by far the preferred ES5 compiler of the React community.
 
 **Move** your `index.js` into a new `src` folder. This is where you will write your ES6 code. **Replace** the contents in `index.js` with a simple:
-
 ```js
 const str = 'ES6';
 console.log(`Hello ${str}`);
@@ -83,7 +82,7 @@ As you can see, unlike the community-made package `color` that we used before, w
 
 Here we simply replace `const Sessel = require('./Sessel');` by `import Sessel from './Sessel';`, which is the newer ES6 modules syntax (as opposed to "CommonJS" modules syntax). It is currently not natively supported by NodeJS, but Babel processes those ES6 files correctly.
 
-In `Sessel.js`, we also replace `module.exports = Sessel;` by `export default Sessel;`
+In `Sessel.js`, we also **replace** `module.exports = Sessel;` by `export default Sessel;`
 
 * **Run:** `yarn start`
 
@@ -136,13 +135,13 @@ Add `/* eslint-disable no-console */` at the top of our `index.js` file to allow
 
 * **Run:** `yarn add --dev eslint-plugin-compat`
 
-- Add the following to your `package.json`, to indicate that we want to support browsers that have more than 1% market share:
+**Add** the following to your `package.json`, to indicate that we want to support browsers that have more than 1% market share:
 
 ```json
 "browserslist": ["> 1%"],
 ```
 
-- Edit your `.eslintrc.json` file like so:
+**Modify** your `.eslintrc.json` file like so:
 
 ```json
 {
@@ -171,7 +170,7 @@ We will use a **[prettier-eslint](https://github.com/prettier/prettier-eslint)**
 * **Run** `yarn add --dev prettier-eslint`
 
 > We want **VS Code** to format our code using Prettier after saving a file. First press `CMD + Shift + P` and select `Install Extension`. Install the ESlint and Prettier Extension for IDE support.
-> Press `CMD + ,` if you’re on a Mac - to open the VS Code Workspace Settings - then add the following:
+> Press `CMD + ,` if you’re on a Mac - to open the VS Code Workspace Settings - then **add** the following:
 ```javascript
 {
     // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
@@ -188,13 +187,13 @@ We will use a **[prettier-eslint](https://github.com/prettier/prettier-eslint)**
 
 > **[Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)**: Scripts that are run when certain actions like a commit or a push occur.
 
-Okay so we now have this neat `test` task that tells us if our code looks good or not. We're going to set up Git Hooks to automatically run this task before every `git commit`, which will prevent us from pushing bad code to the repository if it doesn't pass the `test` task.
+Okay, so we now have this neat `test` task that tells us if our code looks good or not. We're going to set up Git Hooks to automatically run this task before every `git commit`, which will prevent us from pushing bad code to the repository if it doesn't pass the `test` task.
 
 [Husky](https://github.com/typicode/husky) is a package that makes this very easy to set up Git Hooks.
 
 * **Run** `yarn add --dev husky`
 
-All we have to do is to create a new tasks in `scripts` and `precommit`:
+All we have to do is to **create** a new task in `scripts` and name it `precommit`:
 
 ```json
 "scripts": {
@@ -210,13 +209,15 @@ If you encounter any issues:
 
 * **Run** `yarn add --dev husky --force`
 
-* Congratulations, you completed Page 2!
+Congratulations, you completed Page 2!
 
-Dont forget to:
+Don't forget to:
 
-**run** `git add .`
+**Run** `git add .`
 and then
 `git commit -m="Page 2"`
+
+---
 
 
 Next section: [03 - Express, Nodemon, and PM2](https://github.com/XXXLutz/techstack-tutorial/blob/master/03-express-nodemon-pm2/Readme.md)

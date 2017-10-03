@@ -1,16 +1,14 @@
-# Add a new data source
+# 10 - Add a new data source
 
-In this chapter we will add a new data source to our application. In this
-tutorial we will add the content of this repository as content for the developer portal.
+In this chapter, we will add a new data source to our application. This will function as the content for the developer portal.
 
 ## Create a new middleware
 
-The Middleware is in General a Proxy, that allows us to Request our own Server (NodeJS Application) which then sends a seperate Request to the defined location. This solves plenty Cross Domain Troubles and also allows us to add Header Information or manipulate the data that comes back on the server.
+The Middleware is in general a Proxy, that allows us to request our own Server (NodeJS application) which then sends a seperate request to the defined location. This solves plenty Cross-Domain troubles and also allows us to add header information or manipulate the data that comes back from the server.
 
-This is something, that only happens on the Server, therefor we will place it in the Server folder.
+This is something, that only happens on the Server, therefor we will place it in the `server` folder.
 
-* **Create** a file named `src/server/middlewares/github/index.js`
-
+* **Create** a file named `server/middlewares/github/index.js`
 ```js
 const cache = {};
 const linkRoute = 'tutorials';
@@ -53,8 +51,7 @@ const repoProxyMiddleware = (req, res, next) => {
 export default repoProxyMiddleware;
 ```
 
-* Add the middleware to routing by modifying `src/server/routing.js`:
-
+Add the middleware to routing by **modifying** `server/routing.js`:
 ```js
 // [...]
 import githubRepoProxy from './middlewares/github';
@@ -63,10 +60,9 @@ import githubRepoProxy from './middlewares/github';
 // [...]
 ```
 
-When you now visit http://localhost:8000/repo/Readme.md it will return the content of the first Page of this repo! This Endpoint we will use for the Content of the Tutorial Page.
+When you **visit** http://localhost:8000/repo/Readme.md it will return the content of the first page of this portal! This endpoint will be used for the content of the developer portal.
 
-First we have to change how the helper files behaves, **edit** 'src/shared/pages/helpers':
-
+First we have to change how the helper files behaves, **modify** 'src/shared/pages/helpers':
 ```jsx
 import marked from 'marked';
 
@@ -83,8 +79,7 @@ export function readDocument(docname) {
 
 We are now fetching the contents directly and just use the docname as full route. The rest stays the same because we treat the markdown the same as before.
 
-Now do some changes on the Tutorial pages `componentDidMount` function:
-
+Now, do some **changes** on the Tutorial pages `componentDidMount` function
 ```jsx
   componentDidMount() {
     let url = '';
@@ -99,22 +94,22 @@ Now do some changes on the Tutorial pages `componentDidMount` function:
   }
 ```
 
-To have the Linking right we also Change the 'lorem' route in `src/shared/components/Navigation/index.jsx` to Readme.md:
-
+To have the linking right we also **change** the 'lorem' route in `shared/components/Navigation/index.jsx` to `Readme.md`:
 ```jsx
 //[...]
 { route: tutorialsRoute('Readme.md'), label: 'Tutorials' },
 //[...]
 ```
 
-If we request the tutorials page root path we request the first Readme page, otherwise do normal linking! The linking on that github content is done via < a > Links so we always request the page fully, but you now have the full Tutorial you just played through right on your platform.
+If we request the tutorials page root path we request the first Readme page, otherwise do normal linking! The linking on that GitHub content is done via `<a>`-links so we always request the page fully, but you now have the full tutorial you just played through right on your platform.
 
 To finish up the process delete the documents folder in public and test your application!
 
 Thank you for playing it through, please feel free to add a pull request or open an issue if you have any questions! We might add another chapter about testing in the future.
 
-You now deserve a coffee, well done!
+You now deserve a :coffee:, well done!
 
 ---
+
 
 Back to the [previous section](https://github.com/XXXLutz/techstack-tutorial/blob/master/09-managing-content/Readme.md) or the [table of contents](https://github.com/XXXLutz/techstack-tutorial/blob/master/Readme.md).

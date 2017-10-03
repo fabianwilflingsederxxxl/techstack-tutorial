@@ -1,6 +1,6 @@
 # 03 - Express, Nodemon, and PM2
 
-In this section we are going to create the server that will render our web app. We will also set up a development mode and a production mode for this server.
+In this section, we are going to create the server that will render our web app. We will also set up a development mode and a production mode for this server.
 
 ## Express
 
@@ -8,14 +8,12 @@ In this section we are going to create the server that will render our web app. 
 
 Let's set up a minimal Express server to serve an HTML page with some CSS.
 
-
-**Delete** everything inside `src`
+**Delete** everything inside `src`.
 
 Create the following files and folders:
 
 
-**Create** a `public/css/style.css` file containing:
-
+- **Create** a `public/css/style.css` file containing:
 ```css
 body {
   width: 960px;
@@ -32,7 +30,7 @@ h1 {
 - Create an empty `src/server/` folder.
 - Create an empty `src/shared/` folder.
 
-This folder is where we put *isomorphic / universal* JavaScript code – files that are used by both the client and the server. A great use case of shared code is *routes*, as you will see later in this tutorial when we'll make an asynchronous call. Here we simply have some configuration constants as an example for now.
+The `shared` folder is where we put *isomorphic / universal* JavaScript code – files that are used by both the client and the server. A great use case of shared code is *routes*, as you will see later in this tutorial when we'll make an asynchronous call. Here we simply have some configuration constants as an example for now.
 
 
 **Create** a `src/shared/config.js` file containing:
@@ -46,13 +44,13 @@ export const isProd = process.env.NODE_ENV === 'production';
 
 If the Node process used to run your app has a `process.env.PORT` environment variable set (that's the case when you deploy to Heroku for instance), it will use this for the port. If there is none, we default to `8000`.
 
-The isProd is a simple util to test if we are running in production mode or not. If the "NODE_ENV" is not set to "production" the code defaults to development.
+The `isProd` is a simple util to test if we are running in production mode or not. If the "NODE_ENV" is not set to "production" the code defaults to development.
 
 **Run:** `yarn add express compression`
 
 `compression` is an Express middleware to activate Gzip compression on the server.
 
-Create a `src/server/index.js` file containing:
+**Create** a `src/server/index.js` file containing:
 
 ```js
 import compression from 'compression';
@@ -187,7 +185,7 @@ PM2 shows an active process. Go to `http://localhost:8000/` in your browser to s
 
 When you get an error, that the address is already in use, it is usually because you have forgotten to stop the pm2 server. So just run `yarn prod:stop` and it should be working again.
 
-To ensure that `prod:build` works fine before commiting code to the repository, add it to the `precommit` task in your `package.json`.
+To ensure that `prod:build` works fine before commiting code to the repository, **add** it to the `precommit` task in your `package.json`.
 
 ```json
 "precommit": "yarn test && yarn prod:build"
@@ -195,13 +193,14 @@ To ensure that `prod:build` works fine before commiting code to the repository, 
 
 Congratulations, you completed Page 3!
 
-Dont forget to:
+Don't forget to:
 
-* **Run:** `git add .`
+**Run:** `git add .`
 and then
 `git commit -m="Page 3"`
 
 ---
+
 
 Next section: [04 - Webpack, React, and Hot Module Replacement](https://github.com/XXXLutz/techstack-tutorial/blob/master/04-webpack-react-hmr/Readme.md)
 

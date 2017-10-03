@@ -14,11 +14,11 @@ This stack uses mainly libraries, that had an inexpensive last version update an
 
 This tutorial won't use a pre-made configuration, we do deep dives in every technology to make sure everybody knows what is happening. For quick boilerplates rather use the [create-react-app](https://github.com/facebookincubator/create-react-app).
 
-In every chapter you find the code on that particular point and you can run the, with `yarn && yarn start`.
+In every chapter you find the code on that particular point and you can run the project with `yarn && yarn start`.
 
 Works on Linux, macOS, and Windows.
 
-> **Note**: If you run into something weird, make sure to check out the [open issues](https://github.com/XXXLutz/techstack-tutorial/issues?q=is%3Aopen+is%3Aissue+label%3Abug) and we are also open for ideas, feature adaptions for this tutorial.
+> **Note**: If you run into something weird, make sure to check out the [open issues](https://github.com/XXXLutz/techstack-tutorial/issues?q=is%3Aopen+is%3Aissue+label%3Abug) and we are also open for ideas and feature adaptions for this tutorial.
 
 
 ## Table of contents
