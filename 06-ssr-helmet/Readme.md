@@ -64,7 +64,7 @@ export default (app) => {
 
 This file is where we deal with requests and responses. The calls to business logic are externalized to a different `controller` module.
 
-**Note**: You will find a lot of React Router examples using `*` as the route on the server, leaving the entire routing handling to React Router. Since all requests go through the same function, that makes it inconvenient to implement MVC-style pages. Instead of doing that, we're here explicitly declaring the routes and their dedicated responses, to be able to fetch data from the database and pass it to a given page easily.
+**Note**: You will find a lot of React Router examples using `*` as the route on the server, leaving the entire routing handling to React Router. Since all requests go through the same function, this makes it inconvenient to implement MVC-style pages. Instead of doing that, we're here explicitly declaring the routes and their dedicated responses to be able to fetch data from the database and pass it to a given page easily.
 
 **Create** a `src/server/controller.js` file containing:
 
@@ -75,7 +75,7 @@ export const tutorialsPage = num => ({
 });
 ```
 
-Here is our controller. It would typically make business logic and database calls, but in our case we just hard-code some results. Those results are passed back to the `routing` module to be used to initialize our application state.
+Here is our controller. It would typically make business logic and database calls but in our case we just hard-code some results. Those results are passed back to the `routing` module to be used to initialize our application state.
 
 **Edit** `src/server/index.js` like so:
 
@@ -145,7 +145,7 @@ export default renderApp;
 
 `ReactDOMServer.renderToString` is where the magic happens. React will evaluate our entire `shared` `App`, and return a plain string of HTML elements. `Provider` works the same as on the client, but on the server, we wrap our app inside `StaticRouter` instead of `BrowserRouter`.
 
-* You can now run `yarn start` and `yarn dev:wds` and navigate between pages. Refreshing the page on `/tutorials`, and `/404` (or any other URI), should now work correctly.
+* You can now run `yarn start` and `yarn dev:wds` and navigate between pages. Refreshing the page on `/tutorials` and `/404` (or any other URI) should now work correctly.
 
 ## React Helmet
 
@@ -263,11 +263,11 @@ export default NotFoundPage;
 
 The `<Helmet>` component doesn't actually render anything, it just injects content in the `head` of your document and exposes the same data to the server.
 
-Congratulations, you completed Page 6! SSR is a tough thing and hard to wrap your head around, I like summarize it this way:
+Congratulations, you completed Page 6! SSR is a tough thing and can be hard to wrap your head around. I like to summarize it this way:
 
-- When you request a page it will send you Markup and content back for the browser to render it (like Perl, PHP, Python Flask, Java Applications or just static files do it). So we run (with Babel) Javascript on the NodeJs server behaving like a server side scripting language.
-- To stay responsive as modern web application should be we send with that request a big javascript file (that was bundled by Webpack) with it as well.
-- The javascript file adds all the event listeners and application behaviour to the App (how DOM behaves, what happens when you click a link, etc.) and takes from that point on the logic how the experience for the user should be like, how to load data and in our case makes sure the navigation is working on the client side as well.
+- When you request a page it will send you Markup and content back for the browser to render (like Perl, PHP, Python Flask, Java Applications or just static files do it). So we run (with Babel) Javascript on the NodeJs server behaving like a server side scripting language.
+- To stay responsive, as modern web applications should be, we send that request with a big javascript file (that was bundled by Webpack) with it as well.
+- The javascript file adds all the event listeners and application behaviors to the App (how DOM behaves, what happens when you click a link, etc.) and takes from that point the logic of how the experience for the user should be like, how to load data and in our case making sure the navigation is working on the client side as well.
 
 Go and get a coffee, and don't forget to:
 

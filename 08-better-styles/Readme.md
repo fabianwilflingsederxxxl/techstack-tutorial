@@ -15,7 +15,7 @@ There are a few things about our App that reduce the reusability of our code:
 
 
 ## Preview
-Here's a quick preview of what the site will look after finishing this chapter
+Here's a quick preview of what the site will look after finishing this chapter:
 
 ![](https://i.imgur.com/dc0V0Ln.png)
 
@@ -23,7 +23,7 @@ Here's a quick preview of what the site will look after finishing this chapter
 
 The change needed to include the CI font is minor.
 
-**Edit** `shared/styles/main.scss` and change to Font to Arial. For the Header Arial Black will be used, we will do that in the Component.
+**Edit** `shared/styles/main.scss` and change the Font to Arial. For the Header Arial Black will be used, we will do that in the Component.
 
 
 ## Content Styling & Container Element
@@ -40,7 +40,7 @@ ${stylesheet}
 
 This allows us to use media queries and responsive design in general.
 
-We're now adding the font-family in our css and create a container and row class that can get used by our react components.
+We're now adding the font-family in our css and creating a container and row class that can get used by our react components.
 
 **Replace** content of `shared/styles/main.scss`
 
@@ -72,7 +72,7 @@ body {
 
 ## Header Component
 
-The header component requires to get a "text" prop of type string passed that will get used for the H1 element of the page.
+The header component requires us to get a "text" prop of type string passed that will get used for the H1 element of the page.
 
 To make the header a bit prettier we're adding a background image of the team with a colored overlay.
 
@@ -97,9 +97,9 @@ Header.propTypes = {
 
 export default Header;
 ```
-In this part we'll use flexbox to vertically center the "heading" div of the `Header` component
+In this part we'll use flexbox to vertically center the "heading" div of the `Header` component.
 
-> **[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)** makes it ease to create align items inside of a container. The idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space, or shrinks them to prevent overflow.
+> **[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)** makes it ease to create align items inside of a container. The idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space or shrinks them to prevent overflow.
 
 **Create** `shared/components/Header/style.scss`
 
@@ -208,7 +208,7 @@ import main from '../../styles/main.scss';
 
 ## Navigation
 
-For our navigation we'll be adding the "xxxlutz" logo, inlining the links and centering the list as well as changing the active state color of the active page.
+For our navigation we'll be adding the "xxxlutz" logo, inlining the links and centering the list, as well as changing the active state color of the active page.
 
 **Modify** content of `shared/components/Navigation/index.jsx`
 ```jsx

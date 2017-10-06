@@ -1,12 +1,12 @@
 # 10 - Add a new data source
 
-In this chapter, we will add a new data source to our application. This will function as the content for the developer portal.
+In this chapter we will add a new data source to our application. This will function as the content for the developer portal.
 
 ## Create a new middleware
 
-The Middleware is in general a Proxy, that allows us to request our own Server (NodeJS application) which then sends a seperate request to the defined location. This solves plenty Cross-Domain troubles and also allows us to add header information or manipulate the data that comes back from the server.
+The Middleware is basically a Proxy that allows us to request our own Server (NodeJS application), which then sends a separate request to the defined location. This solves plenty Cross-Domain troubles and also allows us to add header information or manipulate the data that comes back from the server.
 
-This is something, that only happens on the Server, therefor we will place it in the `server` folder.
+This is something that only happens on the Server, therefore we will place it in the `server` folder.
 
 * **Create** a file named `server/middlewares/github/index.js`
 ```js
@@ -101,9 +101,9 @@ To have the linking right we also **change** the 'lorem' route in `shared/compon
 //[...]
 ```
 
-If we request the tutorials page root path we request the first Readme page, otherwise do normal linking! The linking on that GitHub content is done via `<a>`-links so we always request the page fully, but you now have the full tutorial you just played through right on your platform.
+If we request the tutorials page root path, we request the first Readme page, otherwise just do normal linking! The linking on that GitHub content is done via `<a>` links so we always request the page fully, but you now have the full tutorial you just played through right on your platform.
 
-To finish up the process delete the documents folder in public and test your application!
+To finish up the process, delete the documents folder in public and test your application!
 
 Thank you for playing it through, please feel free to add a pull request or open an issue if you have any questions! We might add another chapter about testing in the future.
 

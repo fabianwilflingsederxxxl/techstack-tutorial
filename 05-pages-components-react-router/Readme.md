@@ -1,12 +1,12 @@
 # 05 - Pages, Components and React Router
 
-In this chapter, we are going to create different pages, fill them with first components and make it possible to navigate between them.
+In this chapter we are going to create different pages, fill them with first components, and make it possible to navigate between them.
 
 ## Pages
 
-Architecture and Folder principles vary a lot in Javascript applications. We will follow the Components Based Architecture as well as the Atomic Design principles.
+Architecture and Folder principles vary in Javascript applications. We will follow the Components Based Architecture as well as the Atomic Design principles.
 
-A Page is a component that is referred by the React Router (will come further down) and usually contains state handling as well as the business logic in that particular page.
+A Page is a component that is referred by the React Router (will come further down) and usually contains state handling as well as the business logic of that particular page.
 
 In this section we will have 3 pages:
 
@@ -44,7 +44,7 @@ export default App;
 
 * **Run:** Open 'localhost:8000' and check out the new Page.
 
-In the next section, we are going to add a component to our page. But first some general information:
+In the next section we are going to add a component to our page. But first some general information:
 
 ## Handling Events
 
@@ -71,7 +71,7 @@ is slightly different in React:
 
 ### Component: Custom button
 
-With that in mind we can build a custom button with handling via properties. The button will contain the text "Hello". A `onClick` event listener can be supplied via the onButtonClick property.
+With this in mind we can build a custom button with handling via properties. The button will contain the text "Hello". An `onClick` event listener can be supplied via the onButtonClick property.
 
 For type checking the props of the buttons properties we will use [PropTypes](https://facebook.github.io/react/docs/typechecking-with-proptypes.html).
 
@@ -183,7 +183,7 @@ class Home extends Component {
 export default Home;
 ```
 
-Now you see a button on the Home Page and when you click it you see a message in the console as well as the text of the button is changed to the current time.
+Now you see a button on the Home Page, when you click it you see a message in the console - as well as the text of the button is changed to the current time.
 
 ## Asynchronous actions
 
@@ -318,7 +318,7 @@ class Home extends Component {
 export default Home;
 ```
 
-There are two buttons rendered on the Home Page, the first one behaves as defined before, the second Button fetches the data from the server and shows the result. We use the same Component for both functionalities, but the onButtonClick Props Function is now asynchronous.
+There are two buttons rendered on the Home Page, the first one behaves as defined before, the second Button fetches the data from the server and shows the result. We use the same Component for both functionalities but the onButtonClick Props Function is now asynchronous.
 
 > In the network Tab of your console you see the request to the server Endpoint.
 
@@ -478,9 +478,9 @@ export default App;
 
 You'll see the URL changing dynamically. Switch between different pages and use the back button of your browser to see that the browsing history is working as expected.
 
-Now, let's say you navigated to `http://localhost:8000/tutorials` this way. Hit the refresh button. You now get a 404, because our Express server only responds to `/`. As you navigated between pages, you were actually only doing it on the client-side (= in your browser). Let's add server-side rendering to the mix to get the expected behavior.
+Now, let's say you navigated to `http://localhost:8000/tutorials` this way. Hit the refresh button. You now get a 404 because our Express server only responds to `/`. As you navigated between pages, you were actually only doing it on the client-side (= in your browser). Let's add server-side rendering to the mix to get the expected behavior.
 
-Congratulations, you completed Page 5! You created your first components, that are rendering your content and already have some interactions.
+Congratulations, you completed Page 5! You created your first components that are rendering your content and already have some interactions.
 
 Don't forget to:
 

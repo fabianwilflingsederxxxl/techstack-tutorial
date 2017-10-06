@@ -2,11 +2,11 @@
 
 The next two chapters are optional topics and show how we would approach new features in the stack and add content and functionality in our platform.
 
-In this chapter, we are going to implement a simple way to manage articles based on plain markdown files.
+In this chapter we will implement a simple way to manage articles based on plain markdown files.
 
 Download the [placeholder markdown file](https://pastebin.com/raw/K5fjJGkf) and **save** it as `public/documents/lorem.md`.
 
-The public folder is defined in the `src/shared/server/index.js` as a public path and we will use it to store our documents. There are styles we don't need in there any more so **delete** the `css` Folder.
+The public folder is defined in the `src/shared/server/index.js` as a public path and we will use it to store our documents. There are styles we don't need in there anymore so **delete** the `css` Folder.
 
 We use the package `marked` for Mark Down Rendering:
 
@@ -65,7 +65,7 @@ Tutorials.propTypes = {
 export default Tutorials;
 ```
 
-**Create** a file `src/shared/pages/helpers.js` containing the following functions
+**Create** a file `src/shared/pages/helpers.js` containing the following functions:
 ```jsx
 import marked from 'marked';
 
@@ -88,7 +88,7 @@ export function readDocument(docname) {
 
 `readDocument` fetches the markdown document containing the requested article from the server.
 
-**Add** to the `src/shared/pages/helpers.js` following render function
+**Add** the following render function to `src/shared/pages/helpers.js`:
 ```jsx
 /* Find first heading of lowest depth */
 function findHeading(tokens) {
@@ -172,7 +172,7 @@ import {
 // [...]
 ```
 
-**Modify** `src/shared/app.jsx` to add the article page to the react router
+**Modify** `src/shared/app.jsx` to add the article page to the react router:
 ```jsx
 // [...]
 // Routes
@@ -238,11 +238,11 @@ export default Navigation;
 
 The Tutorials page is now fully functional. Start the dev server and **visit** `http://localhost:8000/tutorials/lorem` in your browser.
 
-If you add other markdown files into the `public/documents/` folder, you can view them like this, too. Sometimes the Webpack bundling is faster than Nodemon restart, that causes an error because it is trying to load the article before the server is up. This is annoying, but should not influence your dev too much! Now you would start and add SSR to the Tutorials Page, but we keep it lazy loading.
+If you add other markdown files into the `public/documents/` folder, you can view them like this, too. Sometimes the Webpack bundling is faster than Nodemon restart, that causes an error because it is trying to load the article before the server is up. This is annoying but should not influence your dev too much! Now you would start and add SSR to the Tutorials Page, but we keep it lazy loading.
 
 Congratulations, you completed Page 9!
 
-Dont forget to:
+Don't forget to:
 
 **Run:** `git add .`
 and then

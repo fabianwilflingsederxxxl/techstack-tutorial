@@ -2,19 +2,19 @@
 
 Welcome to our xxxlutz Development Tutorial. This contains content and information you need to get your Javascript Development started.
 
-We start with the very basics, if you know most of the setup you will be faster, if not just take you time and try to fully understand the topics we are going to tackle, it is ok to read into different technologies as well!
+We start with the very basics, take your time and try to fully understand the topics we are going to tackle. It is ok to use and read into other technologies as well as long as they are compatible.
 
 The main development interface is **[Google Chrome](https://www.google.de/chrome/browser/desktop/index.html)**, especially the Console (Press `F12`) for debugging.
 
 ## IDE / Texteditor
 
-This Tutorial is created for the IDE **[Visual Code Studio](https://code.visualstudio.com/)**, but the development would actually work with any editor of your choice. So if you rather prefer Atom, Sublime Text oder Notepad you can use it, too.
+This Tutorial is created for the IDE **[Visual Code Studio](https://code.visualstudio.com/)**, but the development would actually work with any editor of your choice. So if you rather prefer Atom, Sublime Text, or Notepad you can use it too.
 
 In this section we will set up Node, Yarn, a basic `package.json` file, and install a package.
 
 ## Node
 
-> 💡 **[Node.js](https://nodejs.org/)** is a JavaScript runtime environment. It is mostly used for Back-End development, but also for general scripting. In the context of Front-End development, it can be used to perform a whole bunch of tasks like linting, testing, and assembling files.
+> 💡 **[Node.js](https://nodejs.org/)** is a JavaScript runtime environment. It is mostly used for Back-End development but also for general scripting. In the context of Front-End development, it can be used to perform many tasks like linting, testing, and assembling files.
 
 We will use Node for basically everything in this tutorial, so you're going to need it. Head to the [download page](https://nodejs.org/en/download/current/) for **macOS** or **Windows** binaries, or the [package manager installations page](https://nodejs.org/en/download/package-manager/) for Linux distributions.
 
@@ -24,7 +24,7 @@ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-If you already have nodejs installed on your machine, make sure you have a version > 6.5.0 using the command `node -v`.
+If you already have nodejs installed on your machine, make sure you have version 6.5.0 or higher using the command `node -v`.
 
 On Windows open the NodeJs cmd as a terminal (command line interface - CLI).
 
@@ -38,7 +38,7 @@ NPM is the default package manager for Node. It is automatically installed along
 
 **Install** Yarn by following the [instructions](https://yarnpkg.com/en/docs/install) for your OS.
 
-If you are on a macOS or Unix Maching use the **Installation Script** from the *Alternatives* tab , to [avoid](https://github.com/yarnpkg/yarn/issues/1505) relying on other package managers:
+If you are on a macOS or Unix Machine use the **Installation Script** from the *Alternatives* tab, to [avoid](https://github.com/yarnpkg/yarn/issues/1505) relying on other package managers:
 
 `curl -o- -L https://yarnpkg.com/install.sh | bash`
 
@@ -52,7 +52,7 @@ For Windows download the executable from https://yarnpkg.com/latest.msi and run 
 - **Create** a new folder to work in, and `cd` into the folder. (type in `mkdir xxxlutztutorial && cd xxxlutztutorial`)
 - **Run** `yarn init` and answer the questions (`yarn init -y` to skip all questions), to generate a `package.json` file automatically.
 
-Open the `package.json` and **remove** the line `"main": "index.js",`, the main entrypoint is only relevant when you want to `require('xxxlutztutorial')` your package and it would not make sense to require this tutorial in another repository. You have now your initial config ready:
+Open the `package.json` file and **remove** the line `"main": "index.js",`, the main entrypoint is only relevant when you want to `require('xxxlutztutorial')` your package and it would not make sense to require this tutorial in another repository. You now have your initial config ready:
 
 ```json
 {
@@ -73,9 +73,9 @@ Open the `package.json` and **remove** the line `"main": "index.js",`, the main 
 
 ## `start` script
 
-Running `node .` to execute our program is a bit too low-level. We are going to use an Yarn script to trigger the execution of that code instead.
+Running `node .` to execute our program is a bit too low-level. We are going to use a Yarn script to trigger the execution of that code instead.
 
-This lets use  `yarn start`, even when our program gets more complicated.
+This lets us use  `yarn start`, even when our program gets more complicated.
 
 In `package.json`, **add** a `scripts` section:
 ```json
@@ -91,7 +91,7 @@ In `package.json`, **add** a `scripts` section:
 
 `start` is the name we give to the *task* that will run our program. We are going to create a lot of different tasks in this `scripts` object throughout this tutorial. `start` is typically the name given to the default task of an application. Some other standard task names are `stop` and `test`.
 
-`package.json` must be a valid JSON file, which means that you cannot have trailing commas. So be careful when editing manually your `package.json` file.
+`package.json` must be a valid JSON file, which means you cannot have trailing commas. So be careful when manually editing your `package.json` file.
 
 * **Run:** `yarn start`
 
@@ -99,7 +99,7 @@ In `package.json`, **add** a `scripts` section:
 
 ## Git and `.gitignore`
 
-**Initialize** a Git repository with `git init`, at the end of every page, we'll remind you to commit your changes. If you want to know more about git read [this article](http://rogerdudler.github.io/git-guide/).
+**Initialize** a Git repository with `git init`. At the end of every page we'll remind you to commit your changes. If you want to know more about git read [this article](http://rogerdudler.github.io/git-guide/).
 
 **Create** a `.gitignore` file and add the following to it:
 ```gitignore
@@ -113,7 +113,7 @@ In `package.json`, **add** a `scripts` section:
 
 ## Installing and using a package
 
-In this section we will install and use a package. A "package" is simply a piece of code that someone else wrote, and that you can use in your own code. It can be anything. Here, we're going to try a package that helps you manipulate colors for instance.
+In this section we will install and use a package. A "package" is simply a piece of code that someone else wrote that you can use in your own code. It can be anything. Here, we are going to try a package that helps you manipulate colors for instance.
 
 - **Install** the community-made package called `color` by running `yarn add color`.
 
@@ -123,7 +123,7 @@ A `node_modules` folder has been created to store the package.
 
 **Add** `node_modules/` to your `.gitignore`
 
-You will also notice that a `yarn.lock` file got generated by Yarn. You should commit this file to your repository, as it will ensure that everyone in your team uses the same version of your packages. If you're sticking to NPM instead of Yarn, the equivalent of this file is the *shrinkwrap*.
+You will also notice that a `yarn.lock` file was generated by Yarn. You should commit this file to your repository, as it will ensure that everyone on your team uses the same version of your packages. If you're sticking to NPM instead of Yarn, the equivalent of this file is the *shrinkwrap*.
 
 **Replace** the content of your `index.js` file:
 ```js
