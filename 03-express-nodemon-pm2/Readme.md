@@ -106,7 +106,7 @@ In `package.json` **change** your `start` script to: `"start": "babel-node src/s
 
 * **Run:** `yarn start`, and hit `localhost:8000` in your browser.
 
-If everything works as expected you should see a blank page with "Hello App" written both on the tab title and as a green heading on the page.
+If everything works as expected you should see a blank page with "Hello App" written both on the tab title and as a red heading on the page.
 
 **Note**: Some processes – typically processes that wait for things to happen, like a server for instance – will prevent you from entering commands in your terminal until they're done. To interrupt such processes and get your prompt back, press **Ctrl+C**. You can alternatively open a new terminal tab if you want to keep them running while being able to enter commands. You can also make these processes run in the background but that's out of the scope of this tutorial.
 
