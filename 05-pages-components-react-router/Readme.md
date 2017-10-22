@@ -211,13 +211,13 @@ firstEndpointRoute(1234) // -> '/ajax/hello/1234' (for the actual call)
 **Add** the following in `src/server/index.js`
 
 ```jsx
-import { firstEndpointRoute } from '../shared/routes'
+import { firstEndpointRoute } from '../shared/routes';
 
 // [below app.get('/')...]
 
 app.get(firstEndpointRoute(), (req, res) => {
   res.json({ serverMessage: `Hello from the server! (received ${req.params.num})` })
-})
+});
 ```
 
 Open the url `http://localhost:8000/ajax/first/123` and you will see the json response.
