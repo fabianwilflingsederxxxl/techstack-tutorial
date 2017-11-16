@@ -205,7 +205,7 @@ All we have to do is to **create** a new task in `scripts` and name it `precommi
 
 If you now try to commit your code, it should automatically run the `test` task.
 
-If you encounter any issues:
+If you encounter any issues or husky isn't running correctly (or not at all):
 
 * **Run** `yarn add --dev husky --force`
 
