@@ -155,6 +155,15 @@ Add `/* eslint-disable no-console */` at the top of our `index.js` file to allow
 }
 ```
 
+To turn off consistent linebreak enforcement (https://eslint.org/docs/rules/linebreak-style) optionally use:
+
+```json
+  "rules": {
+    "compat/compat": 2,
+    "linebreak-style": 0
+  }
+```
+
 You can try the plugin by using `navigator.serviceWorker` or `fetch` in your code for instance, which should raise an ESLint warning.
 
 ### ESLint in your editor
