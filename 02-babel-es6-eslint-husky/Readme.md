@@ -155,6 +155,15 @@ Add `/* eslint-disable no-console */` at the top of our `index.js` file to allow
 }
 ```
 
+To turn off consistent linebreak enforcement (https://eslint.org/docs/rules/linebreak-style) optionally use:
+
+```json
+  "rules": {
+    "compat/compat": 2,
+    "linebreak-style": 0
+  }
+```
+
 You can try the plugin by using `navigator.serviceWorker` or `fetch` in your code for instance, which should raise an ESLint warning.
 
 ### ESLint in your editor
@@ -205,7 +214,7 @@ All we have to do is to **create** a new task in `scripts` and name it `precommi
 
 If you now try to commit your code, it should automatically run the `test` task.
 
-If you encounter any issues:
+If you encounter any issues or husky isn't running correctly (or not at all):
 
 * **Run** `yarn add --dev husky --force`
 
