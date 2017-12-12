@@ -8,7 +8,7 @@ class NotFoundPage extends Component {
     return (
       <div>
         <Helmet
-          title={'Not Found'}
+          title="Not Found"
           meta={[{ name: 'description', content: 'Not found Page description' }]}
         />
         <Header text="Not Found" />

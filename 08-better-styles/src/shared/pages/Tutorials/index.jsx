@@ -9,7 +9,7 @@ class Tutorials extends Component {
     return (
       <div>
         <Helmet
-          title={'Tutorials'}
+          title="Tutorials"
           meta={[{ name: 'description', content: 'Tutorial Page description' }]}
         />
         <Header text="Tutorials" />

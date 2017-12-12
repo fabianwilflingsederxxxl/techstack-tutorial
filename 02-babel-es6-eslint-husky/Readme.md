@@ -97,7 +97,7 @@ ESLint works with *rules*, and there are [many of them](http://eslint.org/docs/r
 Check out Airbnb's most recent [instructions](https://www.npmjs.com/package/eslint-config-airbnb) to install the config package and all its dependencies correctly.
 
 * **Run:**
-`yarn add --dev eslint-config-airbnb@latest eslint@4.3.0 eslint-plugin-jsx-a11y@5.1.1 eslint-plugin-import@2.7.0 eslint-plugin-react@7.1.0
+`yarn add --dev eslint@^4.9.0 eslint-plugin-import@^2.7.0 eslint-plugin-jsx-a11y@^6.0.2 eslint-plugin-react@^7.4.0 eslint-config-airbnb@latest
 `
 
 **Create** an `.eslintrc.json` file at the root of your project, just like we did for Babel, and write the following to it:

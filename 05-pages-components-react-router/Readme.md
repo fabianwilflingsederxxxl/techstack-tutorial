@@ -328,6 +328,32 @@ There are two buttons rendered on the Home Page, the first one behaves as define
 
 * **Run:** `yarn add react-router react-router-dom`
 
+* **Edit** `.eslintrc.json`
+```json
+{
+  "extends": "airbnb",
+  "plugins": ["compat"],
+  "rules": {
+    "compat/compat": 2,
+    "react/prefer-stateless-function": 0,
+      "jsx-a11y/anchor-is-valid": ["error", {
+      "components": ["Link"],
+      "specialLink": ["to"]
+    }]
+  },
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "polyfills": ["fetch"],
+    "import/resolver": {
+      "babel-module": {}
+    }
+  }
+}
+
+```
+
 On the client side, we first need to wrap our app inside a `BrowserRouter` component.
 
 **Update** your `src/client/index.jsx` like so:
@@ -424,8 +450,7 @@ class Navigation extends Component {
               <NavLink to={link.route} activeStyle={{ color: 'limegreen' }} exact>
                 {link.label}
               </NavLink>
-            </li>),
-          )}
+            </li>))}
         </ul>
       </nav>
     );

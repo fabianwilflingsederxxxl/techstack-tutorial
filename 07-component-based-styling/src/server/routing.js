@@ -1,7 +1,6 @@
-import { tutorialsPage } from 'server/controller';
-
 import { HOME_PAGE_ROUTE, TUTORIALS_PAGE_ROUTE, firstEndpointRoute } from 'shared/routes';
 
+import { tutorialsPage } from 'server/controller';
 import renderApp from 'server/render-app';
 
 export default (app) => {

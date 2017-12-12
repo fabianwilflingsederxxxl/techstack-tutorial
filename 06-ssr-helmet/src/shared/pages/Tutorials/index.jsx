@@ -6,7 +6,7 @@ class Tutorials extends Component {
     return (
       <div>
         <Helmet
-          title={'Tutorials'}
+          title="Tutorials"
           meta={[{ name: 'description', content: 'Tutorial Page description' }]}
         />
         <p>Tutorial List here</p>

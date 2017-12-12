@@ -62,7 +62,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Helmet title={'Home'} meta={[{ name: 'description', content: 'Home Page description' }]} />
+        <Helmet title="Home" meta={[{ name: 'description', content: 'Home Page description' }]} />
         <h1>Home</h1>
         <Button text={this.state.buttonText} onButtonClick={this.clickHandler} />
         <Button text={this.state.buttonTextAsync} onButtonClick={this.clickHandlerAsync} />

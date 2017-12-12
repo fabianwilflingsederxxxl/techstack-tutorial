@@ -12,9 +12,7 @@ class Tutorials extends Component {
 
     this.state = {
       title: 'Tutorials',
-      text: '',
       html: '',
-      filename: this.props.match.params.docname,
     };
   }
 
@@ -35,7 +33,9 @@ class Tutorials extends Component {
           ]}
         />
         <div className={main.container}>
+          {/* eslint-disable react/no-danger */}
           <article dangerouslySetInnerHTML={{ __html: this.state.html }} />
+          {/* eslint-enable react/no-danger */}
         </div>
       </div>
     );

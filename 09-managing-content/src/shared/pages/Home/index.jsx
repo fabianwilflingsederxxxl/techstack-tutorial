@@ -65,7 +65,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Helmet title={'Home'} meta={[{ name: 'description', content: 'Home Page description' }]} />
+        <Helmet title="Home" meta={[{ name: 'description', content: 'Home Page description' }]} />
         <Header text="Home" />
         <div className={main.container}>
           <div className={main.row}>
