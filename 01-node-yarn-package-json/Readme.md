@@ -1,20 +1,20 @@
 # 01 - Node, Yarn, and `package.json`
 
-Welcome to our xxxlutz Development Tutorial. This contains content and information you need to get your Javascript Development started.
+Welcome to our xxxlutz development tutorial. This contains content and information you need to get your Javascript development started.
 
 We start with the very basics, take your time and try to fully understand the topics we are going to tackle. It is ok to use and read into other technologies as well as long as they are compatible.
 
-The main development interface is **[Google Chrome](https://www.google.de/chrome/browser/desktop/index.html)**, especially the Console (Press `F12`) for debugging.
+The main development interface is **[Google Chrome](https://www.google.de/chrome/browser/desktop/index.html)**, especially the console (Press `F12`) for debugging.
 
 ## IDE / Texteditor
 
-This Tutorial is created for the IDE **[Visual Code Studio](https://code.visualstudio.com/)**, but the development would actually work with any editor of your choice. So if you rather prefer Atom, Sublime Text, or Notepad you can use it too.
+This tutorial is created for the IDE **[Visual Code Studio](https://code.visualstudio.com/)**, but the development would actually work with any editor of your choice. So if you rather prefer Atom, Sublime Text, or Notepad you can use it too.
 
 In this section we will set up Node, Yarn, a basic `package.json` file, and install a package.
 
 ## Node
 
-> 💡 **[Node.js](https://nodejs.org/)** is a JavaScript runtime environment. It is mostly used for Back-End development but also for general scripting. In the context of Front-End development, it can be used to perform many tasks like linting, testing, and assembling files.
+> 💡 **[Node.js](https://nodejs.org/)** is a JavaScript runtime environment. It is mostly used for backend development but also for general scripting. In the context of frontend development, it can be used to perform many tasks like linting, testing, and assembling files.
 
 We will use Node for basically everything in this tutorial, so you're going to need it. Head to the [download page](https://nodejs.org/en/download/current/) for **macOS** or **Windows** binaries, or the [package manager installations page](https://nodejs.org/en/download/package-manager/) for Linux distributions.
 
@@ -24,9 +24,9 @@ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-If you already have nodejs installed on your machine, make sure you have version 6.5.0 or higher using the command `node -v`.
+If you already have Node.js installed on your machine, make sure you have version 6.5.0 or higher using the command `node -v`.
 
-On Windows open the NodeJs cmd as a terminal (command line interface - CLI).
+On Windows open the Node.js cmd as a terminal (command line interface - CLI).
 
 ## NPM
 
@@ -38,7 +38,7 @@ NPM is the default package manager for Node. It is automatically installed along
 
 **Install** Yarn by following the [instructions](https://yarnpkg.com/en/docs/install) for your OS.
 
-If you are on a macOS or Unix Machine use the **Installation Script** from the *Alternatives* tab, to [avoid](https://github.com/yarnpkg/yarn/issues/1505) relying on other package managers:
+If you are on a macOS or Unix machine use the **Installation Script** from the *Alternatives* tab, to [avoid](https://github.com/yarnpkg/yarn/issues/1505) relying on other package managers:
 
 `curl -o- -L https://yarnpkg.com/install.sh | bash`
 
