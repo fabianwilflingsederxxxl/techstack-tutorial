@@ -6,9 +6,9 @@
 [![Yarn](https://i.imgur.com/cShYnsa.png)](https://yarnpkg.com/)
 [![Webpack](https://i.imgur.com/y4TjpNt.png)](https://webpack.github.io/)
 
-This is a tutorial guide to assemble the Javascript Stack of our internal Developer Platform. It requires general Development understanding with little bit Javascript Knowledge. The idea and Format of this tutorial was influenced by the great **verekia**, check out [his stack here](https://github.com/verekia/js-stack-from-scratch).
+This is a tutorial guide to assemble the Javascript stack of our internal developer platform. It requires general development understanding with little bit Javascript knowledge. The idea and format of this tutorial was influenced by the great **verekia**, check out [his stack here](https://github.com/verekia/js-stack-from-scratch).
 
-The goal of this tutorial is for quick familiarization of the internal team processes, to understand the concepts of component based architecture and a Javascript stack that relies heavily on ReactJS and Frameworks close to them.
+The goal of this tutorial is for quick familiarization of the internal team processes, to understand the concepts of component based architecture and a Javascript stack that relies heavily on ReactJS and frameworks close to them.
 
 This stack mainly uses libraries that have an inexpensive latest updated version; therefore, it displays a more conservative approach in the tech stack setup. In the finished platform we use Redux and Flow for state and type handling, we might add the functionality to this tutorial at some later point.
 
