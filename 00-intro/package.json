@@ -1,0 +1,11 @@
+{
+  "name": "xxxlutztutorial",
+  "version": "1.0.0",
+  "description": "Tech Stac",
+  "author": "fabian.wilflingseder@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {}
+}
